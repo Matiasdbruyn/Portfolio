@@ -1,0 +1,243 @@
+@use "variables" as v;
+
+.sec1 {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    color: black;
+    font-size: 300px;
+    font-weight: 500;
+    position: relative;
+  }
+
+  h2 {
+    font-family: v.$fuente-secundaria;
+    font-size: 40px;
+    font-weight: 200;
+    position: absolute;
+    bottom: 230px;
+    right: 290px;
+  }
+}
+
+#sec2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+
+  img {
+    filter: grayscale(25%);
+    border-radius: 20px;
+    width: 530px;
+    height: 700px;
+  }
+
+  div {
+    width: 50%;
+
+    h2 {
+      color: black;
+      font-size: 80px;
+      font-weight: 500;
+    }
+
+    p {
+      color: black;
+      font-size: 35px;
+      font-weight: 200;
+    }
+  }
+}
+
+#sec3 {
+  @include v.display(none, center, center);
+  height: 100vh;
+
+  .contenedor {
+    @include v.display(none, center, none);
+    flex-wrap: wrap;
+    gap: 40px;
+
+    .divs {
+      width: 40%;
+
+      h2 {
+        color: black;
+        font-size: 60px;
+        font-weight: 800;
+      }
+
+      p {
+        color: black;
+        font-size: 25px;
+      }
+
+      .accordion {
+        .accordion-item {
+          .accordion-header {
+
+            .accordion-button {
+              background-color: v.$background;
+              color: black;
+              font-size: 16px;
+              font-weight: 700;
+            }
+          }
+
+          .accordion-collapse {
+            .accordion-body {
+              background-color: #e7e6de;
+            }
+          }
+        }
+      }
+    }
+
+    .e {
+      .estudios {
+        @include v.display(none, space-between, center);
+        padding: 10px;
+
+        h3 {
+          color: black;
+          font-size: 25px;
+          margin-bottom: 0;
+          font-weight: 700;
+        }
+
+        p {
+          color: black;
+          width: 80%;
+          margin-bottom: 0;
+          font-size: 15px;
+          padding-left: 10px;
+        }
+      }
+    }
+
+    .c {
+      .contacto {
+        @include v.display(none, start, center);
+        padding: 5px;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+
+        h3 {
+          color: black;
+          font-size: 25px;
+          margin-bottom: 0;
+          padding-left: 10px;
+        }
+      }
+    }
+
+    .h {
+      .habilidades {
+        @include v.display(none, space-evenly, center);
+        padding-top: 30px;
+
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}
+
+#sec4 {
+  @include v.display(column, space-around, center);
+  height: 100vh;
+
+  h2 {
+    color: black;
+    align-self: flex-start;
+    font-size: 90px;
+    font-weight: 700;
+    padding-left: 75px;
+  }
+
+  .trabajos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "a b c d"
+      "e f g h"
+    ;
+    gap: 20px;
+
+    .grid {
+      @include v.display(column, space-between, center);
+      transition-duration: 0.5s;
+
+      &:hover {
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.253);
+      }
+    }
+
+    .a {
+      border: solid 0.2px #c2bdb8;
+      border-radius: 20px;
+      grid-area: a;
+      @extend %trabajos;
+    }
+
+    .b {
+      border: solid 0.2px #c2bdb8;
+      border-radius: 20px;
+      grid-area: b;
+      @extend %trabajos;
+    }
+
+    .c {
+      border: solid 0.2px #c2bdb8;
+      border-radius: 20px;
+      grid-area: c;
+      @extend %trabajos;
+    }
+
+    .d {
+      border: solid 0.2px #c2bdb8;
+      border-radius: 20px;
+      grid-area: d;
+      @extend %trabajos;
+    }
+
+    .e {
+      border: solid 0.2px #c2bdb8;
+      border-radius: 20px;
+      grid-area: e;
+      @extend %trabajos;
+    }
+
+    .f {
+      border: solid 0.2px #c2bdb8;
+      border-radius: 20px;
+      grid-area: f;
+      @extend %trabajos;
+    }
+
+    .g {
+      border: solid 0.2px #c2bdb8;
+      border-radius: 20px;
+      grid-area: g;
+      @extend %trabajos;
+    }
+
+    .h {
+      border: solid 0.2px #c2bdb8;
+      border-radius: 20px;
+      grid-area: h;
+      @extend %trabajos;
+    }
+  }
+}

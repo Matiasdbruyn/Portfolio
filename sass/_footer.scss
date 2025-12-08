@@ -1,0 +1,12 @@
+@use "variables" as v;
+
+.footer {
+    height: 10vh;
+    @include v.display (none, center, center);
+
+    h2 {
+        color: black;
+        font-size: 25px;
+        font-weight: normal;
+    }
+}

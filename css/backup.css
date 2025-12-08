@@ -1,5 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
@@ -11,22 +13,9 @@ body {
   background-color: #fff9f5;
 }
 
-#sec4 .trabajos .a a img, #sec4 .trabajos .b a img, #sec4 .trabajos .c a img, #sec4 .trabajos .d a img, #sec4 .trabajos .e a img, #sec4 .trabajos .f a img, #sec4 .trabajos .g a img, #sec4 .trabajos .h a img {
-  width: 390px;
-  height: 270px;
-  transition-duration: 0.5s;
-}
-#sec4 .trabajos .a a :hover, #sec4 .trabajos .b a :hover, #sec4 .trabajos .c a :hover, #sec4 .trabajos .d a :hover, #sec4 .trabajos .e a :hover, #sec4 .trabajos .f a :hover, #sec4 .trabajos .g a :hover, #sec4 .trabajos .h a :hover {
-  transform: scale(1.1);
-}
-#sec4 .trabajos .a h3, #sec4 .trabajos .b h3, #sec4 .trabajos .c h3, #sec4 .trabajos .d h3, #sec4 .trabajos .e h3, #sec4 .trabajos .f h3, #sec4 .trabajos .g h3, #sec4 .trabajos .h h3 {
-  color: black;
-  text-align: center;
-}
-
+/*HEADER*/
 .header {
   display: flex;
-  flex-direction: none;
   justify-content: space-between;
   align-items: center;
   padding: 0px 150px;
@@ -36,14 +25,17 @@ body {
   z-index: 1000;
   background-color: #fff9f5;
 }
+
 .header .menu .btn-primary {
   background-color: #fff9f5;
   border: none;
 }
+
 .header .menu .btn-primary img {
   width: 25px;
   height: 25px;
 }
+
 .header .menu .offcanvas .offcanvas-body ul {
   display: flex;
   flex-direction: column;
@@ -53,47 +45,43 @@ body {
   margin: 0;
   padding-left: 30px;
 }
+
 .header .menu .offcanvas .offcanvas-body ul li {
   padding-top: 15px;
   transition-duration: 0.5s;
 }
+
 .header .menu .offcanvas .offcanvas-body ul li:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
+
 .header .menu .offcanvas .offcanvas-body ul li a {
   text-decoration: none;
+  font-family: "Elms Sans", sans-serif;
   color: rgba(0, 0, 0, 0.582);
   font-size: 25px;
   font-weight: 600;
   transition-duration: 0.5s;
 }
+
 .header .menu .offcanvas .offcanvas-body ul li a:hover {
   color: black;
 }
+
 .header .logo {
+  font-family: "Elms Sans", sans-serif;
   font-size: 24px;
   font-weight: 600;
   color: black;
   text-decoration: none;
   transition-duration: 0.5s;
 }
+
 .header .logo:hover {
   transform: scale(1.1);
 }
 
-.footer {
-  height: 10vh;
-  display: flex;
-  flex-direction: none;
-  justify-content: center;
-  align-items: center;
-}
-.footer h2 {
-  color: black;
-  font-size: 25px;
-  font-weight: normal;
-}
-
+/*MAIN BASE*/
 .sec1 {
   height: 95vh;
   display: flex;
@@ -101,12 +89,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .sec1 h1 {
   color: black;
   font-size: 300px;
   font-weight: 500;
   position: relative;
 }
+
 .sec1 h2 {
   font-family: "Playwrite CU";
   font-size: 40px;
@@ -122,106 +112,115 @@ body {
   align-items: center;
   height: 100vh;
 }
+
 #sec2 img {
-  filter: grayscale(25%);
+  filter: grayscale(30%);
   border-radius: 20px;
   width: 530px;
   height: 700px;
 }
+
 #sec2 div {
   width: 50%;
 }
+
 #sec2 div h2 {
-  color: black;
   font-size: 80px;
   font-weight: 500;
 }
+
 #sec2 div p {
-  color: black;
   font-size: 35px;
   font-weight: 200;
 }
 
 #sec3 {
   display: flex;
-  flex-direction: none;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
+
 #sec3 .contenedor {
   display: flex;
-  flex-direction: none;
   justify-content: center;
-  align-items: none;
   flex-wrap: wrap;
   gap: 40px;
 }
-#sec3 .contenedor .divs {
-  width: 40%;
+
+#sec3 .contenedor .divs .accordion .accordion-item .accordion-header {
+  border: 0px;
 }
-#sec3 .contenedor .divs h2 {
-  color: black;
-  font-size: 60px;
-  font-weight: 800;
-}
-#sec3 .contenedor .divs p {
-  color: black;
-  font-size: 25px;
-}
+
 #sec3 .contenedor .divs .accordion .accordion-item .accordion-header .accordion-button {
   background-color: #fff9f5;
   color: black;
   font-size: 16px;
   font-weight: 700;
 }
+
 #sec3 .contenedor .divs .accordion .accordion-item .accordion-collapse .accordion-body {
   background-color: #e7e6de;
 }
+
+#sec3 .contenedor .divs {
+  width: 40%;
+}
+
+#sec3 .contenedor .divs h2 {
+  font-size: 60px;
+  font-weight: 800;
+}
+
+#sec3 .contenedor .divs p {
+  font-size: 25px;
+}
+
 #sec3 .contenedor .e .estudios {
   display: flex;
-  flex-direction: none;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
+
 #sec3 .contenedor .e .estudios h3 {
-  color: black;
   font-size: 25px;
   margin-bottom: 0;
   font-weight: 700;
 }
+
 #sec3 .contenedor .e .estudios p {
-  color: black;
   width: 80%;
   margin-bottom: 0;
   font-size: 15px;
   padding-left: 10px;
 }
+
 #sec3 .contenedor .c .contacto {
   display: flex;
-  flex-direction: none;
   justify-content: start;
   align-items: center;
   padding: 5px;
 }
+
 #sec3 .contenedor .c .contacto img {
   width: 40px;
   height: 40px;
 }
+
 #sec3 .contenedor .c .contacto h3 {
-  color: black;
   font-size: 25px;
   margin-bottom: 0;
   padding-left: 10px;
 }
+
 #sec3 .contenedor .h .habilidades {
   display: flex;
-  flex-direction: none;
   justify-content: space-evenly;
   align-items: center;
   padding-top: 30px;
 }
+
 #sec3 .contenedor .h .habilidades img {
   width: 50px;
   height: 50px;
@@ -234,6 +233,7 @@ body {
   align-items: center;
   height: 100vh;
 }
+
 #sec4 h2 {
   color: black;
   align-self: flex-start;
@@ -241,13 +241,18 @@ body {
   font-weight: 700;
   padding-left: 75px;
 }
+
 #sec4 .trabajos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: "a b c d" "e f g h";
+  grid-template-areas:
+    "a b c d"
+    "e f g h"
+  ;
   gap: 20px;
 }
+
 #sec4 .trabajos .grid {
   display: flex;
   flex-direction: column;
@@ -255,48 +260,151 @@ body {
   align-items: center;
   transition-duration: 0.5s;
 }
+
 #sec4 .trabajos .grid:hover {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.253);
 }
+
 #sec4 .trabajos .a {
   border: solid 0.2px #c2bdb8;
   border-radius: 20px;
   grid-area: a;
 }
+
+#sec4 .trabajos .a h3 {
+  text-align: center;
+}
+
+#sec4 .trabajos .a a img {
+  width: 380px;
+  height: 240px;
+  transition-duration: 0.5s;
+}
+
+#sec4 .trabajos .a a img:hover {
+  transform: scale(1.1);
+}
+
 #sec4 .trabajos .b {
   border: solid 0.2px #c2bdb8;
   border-radius: 20px;
   grid-area: b;
 }
+
+#sec4 .trabajos .b h3 {
+  text-align: center;
+}
+
+#sec4 .trabajos .b a img {
+  width: 390px;
+  height: 270px;
+  transition-duration: 0.5s;
+}
+
+#sec4 .trabajos .b a img:hover {
+  transform: scale(1.1);
+}
+
 #sec4 .trabajos .c {
   border: solid 0.2px #c2bdb8;
   border-radius: 20px;
   grid-area: c;
 }
+
+#sec4 .trabajos .c h3 {
+  text-align: center;
+}
+
+#sec4 .trabajos .c a img {
+  width: 390px;
+  height: 270px;
+}
+
 #sec4 .trabajos .d {
   border: solid 0.2px #c2bdb8;
   border-radius: 20px;
   grid-area: d;
 }
+
+#sec4 .trabajos .d h3 {
+  text-align: center;
+}
+
+#sec4 .trabajos .d a img {
+  width: 390px;
+  height: 270px;
+}
+
 #sec4 .trabajos .e {
   border: solid 0.2px #c2bdb8;
   border-radius: 20px;
   grid-area: e;
 }
+
+#sec4 .trabajos .e h3 {
+  text-align: center;
+}
+
+#sec4 .trabajos .e a img {
+  width: 390px;
+  height: 270px;
+}
+
 #sec4 .trabajos .f {
   border: solid 0.2px #c2bdb8;
   border-radius: 20px;
   grid-area: f;
 }
+
+#sec4 .trabajos .f h3 {
+  text-align: center;
+}
+
+#sec4 .trabajos .f a img {
+  width: 390px;
+  height: 270px;
+}
+
 #sec4 .trabajos .g {
   border: solid 0.2px #c2bdb8;
   border-radius: 20px;
   grid-area: g;
 }
+
+#sec4 .trabajos .g h3 {
+  text-align: center;
+}
+
+#sec4 .trabajos .g a img {
+  width: 390px;
+  height: 270px;
+}
+
 #sec4 .trabajos .h {
   border: solid 0.2px #c2bdb8;
   border-radius: 20px;
   grid-area: h;
 }
 
-/*# sourceMappingURL=estilos.css.map */
+#sec4 .trabajos .h h3 {
+  text-align: center;
+}
+
+#sec4 .trabajos .h a img {
+  width: 390px;
+  height: 270px;
+}
+
+
+/*FOOTER*/
+.footer {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer h2 {
+  font-size: 25px;
+  font-weight: normal;
+}
