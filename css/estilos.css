@@ -80,6 +80,44 @@ body {
 .header .logo:hover {
   transform: scale(1.1);
 }
+@media (min-width: 431px) and (max-width: 800px) {
+  .header .logo {
+    font-size: 18px;
+  }
+}
+@media (min-width: 320px) and (max-width: 430px) {
+  .header .logo {
+    font-size: 15px;
+  }
+}
+@media (min-width: 431px) and (max-width: 800px) {
+  .header {
+    padding: 10px;
+  }
+  .header .menu .offcanvas {
+    width: 270px;
+  }
+  .header .menu .offcanvas .offcanvas-body ul {
+    padding-left: 10px;
+  }
+  .header .menu .offcanvas .offcanvas-body ul li a {
+    font-size: 17px;
+  }
+}
+@media (min-width: 320px) and (max-width: 430px) {
+  .header {
+    padding: 10px;
+  }
+  .header .menu .offcanvas {
+    width: 250px;
+  }
+  .header .menu .offcanvas .offcanvas-body ul {
+    padding-left: 10px;
+  }
+  .header .menu .offcanvas .offcanvas-body ul li a {
+    font-size: 17px;
+  }
+}
 
 .footer {
   height: 10vh;
@@ -92,6 +130,18 @@ body {
   color: black;
   font-size: 25px;
   font-weight: normal;
+}
+@media (min-width: 431px) and (max-width: 800px) {
+  .footer h2 {
+    font-size: 15px;
+    margin: 0;
+  }
+}
+@media (min-width: 320px) and (max-width: 430px) {
+  .footer h2 {
+    font-size: 11px;
+    margin: 0;
+  }
 }
 
 .sec1 {
@@ -115,9 +165,38 @@ body {
   bottom: 230px;
   right: 290px;
 }
+@media (min-width: 431px) and (max-width: 800px) {
+  .sec1 h1 {
+    font-size: 100px;
+    position: relative;
+    margin: 0;
+  }
+  .sec1 h2 {
+    font-size: 20px;
+    position: absolute;
+    bottom: 335px;
+    right: 10px;
+    margin: 0;
+  }
+}
+@media (min-width: 320px) and (max-width: 430px) {
+  .sec1 h1 {
+    font-size: 70px;
+    position: relative;
+    margin: 0;
+  }
+  .sec1 h2 {
+    font-size: 15px;
+    position: absolute;
+    bottom: 340px;
+    right: 10px;
+    margin: 0;
+  }
+}
 
 #sec2 {
   display: flex;
+  flex-direction: none;
   justify-content: space-around;
   align-items: center;
   height: 100vh;
@@ -140,6 +219,58 @@ body {
   color: black;
   font-size: 35px;
   font-weight: 200;
+}
+@media (min-width: 431px) and (max-width: 800px) {
+  #sec2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #sec2 img {
+    width: 300px;
+    height: 400px;
+  }
+  #sec2 div {
+    padding-top: 20px;
+    width: 90%;
+  }
+  #sec2 div h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+  }
+  #sec2 div p {
+    padding-top: 10px;
+    font-size: 16px;
+    margin: 0;
+  }
+}
+@media (min-width: 320px) and (max-width: 430px) {
+  #sec2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #sec2 img {
+    width: 300px;
+    height: 400px;
+  }
+  #sec2 div {
+    padding-top: 20px;
+    width: 90%;
+  }
+  #sec2 div h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+  }
+  #sec2 div p {
+    padding-top: 5px;
+    font-size: 16px;
+    margin: 0;
+  }
 }
 
 #sec3 {
@@ -169,6 +300,10 @@ body {
   color: black;
   font-size: 25px;
 }
+#sec3 .contenedor .divs .accordion .accordion-item {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.253);
+  margin-top: 10px;
+}
 #sec3 .contenedor .divs .accordion .accordion-item .accordion-header .accordion-button {
   background-color: #fff9f5;
   color: black;
@@ -176,27 +311,29 @@ body {
   font-weight: 700;
 }
 #sec3 .contenedor .divs .accordion .accordion-item .accordion-collapse .accordion-body {
-  background-color: #e7e6de;
+  background-color: rgba(211, 211, 211, 0.5333333333);
 }
 #sec3 .contenedor .e .estudios {
   display: flex;
   flex-direction: none;
   justify-content: space-between;
   align-items: center;
+  width: 95%;
   padding: 10px;
+  margin-top: 10px;
+  background-color: rgba(211, 211, 211, 0.5333333333);
+  border-radius: 10px;
 }
 #sec3 .contenedor .e .estudios h3 {
   color: black;
-  font-size: 25px;
+  font-size: 20px;
   margin-bottom: 0;
   font-weight: 700;
 }
 #sec3 .contenedor .e .estudios p {
   color: black;
-  width: 80%;
   margin-bottom: 0;
   font-size: 15px;
-  padding-left: 10px;
 }
 #sec3 .contenedor .c .contacto {
   display: flex;
@@ -225,6 +362,138 @@ body {
 #sec3 .contenedor .h .habilidades img {
   width: 50px;
   height: 50px;
+}
+@media (min-width: 431px) and (max-width: 800px) {
+  #sec3 .contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: none;
+    gap: 20px;
+  }
+  #sec3 .contenedor .divs {
+    width: 90%;
+  }
+  #sec3 .contenedor .divs h2 {
+    text-align: center;
+    font-size: 35px;
+    margin: 0;
+  }
+  #sec3 .contenedor .divs p {
+    font-size: 10px;
+  }
+  #sec3 .contenedor .divs .accordion {
+    padding-top: 10px;
+  }
+  #sec3 .contenedor .divs .accordion .accordion-item .accordion-header .accordion-button {
+    font-size: 15px;
+  }
+  #sec3 .contenedor .divs .accordion .accordion-item .accordion-collapse .accordion-body {
+    font-size: 15px;
+  }
+  #sec3 .contenedor .e .estudios {
+    display: flex;
+    flex-direction: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  #sec3 .contenedor .e .estudios h3 {
+    font-size: 15px;
+    margin: 0;
+  }
+  #sec3 .contenedor .e .estudios p {
+    margin: 0;
+    font-size: 10px;
+  }
+  #sec3 .contenedor .c .contacto {
+    padding: 5px;
+  }
+  #sec3 .contenedor .c .contacto img {
+    width: 30px;
+    height: 30px;
+  }
+  #sec3 .contenedor .c .contacto h3 {
+    font-size: 15px;
+    margin: 0;
+    padding-left: 10px;
+  }
+  #sec3 .contenedor .h .habilidades {
+    padding-top: 20px;
+  }
+  #sec3 .contenedor .h .habilidades img {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (min-width: 320px) and (max-width: 430px) {
+  #sec3 .contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: none;
+    gap: 20px;
+  }
+  #sec3 .contenedor .divs {
+    width: 90%;
+  }
+  #sec3 .contenedor .divs h2 {
+    text-align: center;
+    font-size: 35px;
+    margin: 0;
+  }
+  #sec3 .contenedor .divs p {
+    font-size: 10px;
+  }
+  #sec3 .contenedor .divs .accordion {
+    padding-top: 10px;
+  }
+  #sec3 .contenedor .divs .accordion .accordion-item .accordion-header .accordion-button {
+    font-size: 15px;
+  }
+  #sec3 .contenedor .divs .accordion .accordion-item .accordion-collapse .accordion-body {
+    font-size: 15px;
+  }
+  #sec3 .contenedor .e .estudios {
+    display: flex;
+    flex-direction: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  #sec3 .contenedor .e .estudios h3 {
+    font-size: 10px;
+    margin: 0;
+  }
+  #sec3 .contenedor .e .estudios p {
+    margin: 0;
+    font-size: 8px;
+  }
+  #sec3 .contenedor .c .contacto {
+    padding: 5px;
+  }
+  #sec3 .contenedor .c .contacto img {
+    width: 30px;
+    height: 30px;
+  }
+  #sec3 .contenedor .c .contacto h3 {
+    font-size: 15px;
+    margin: 0;
+    padding-left: 10px;
+  }
+  #sec3 .contenedor .h .habilidades {
+    padding-top: 20px;
+  }
+  #sec3 .contenedor .h .habilidades img {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 #sec4 {
@@ -297,6 +566,68 @@ body {
   border: solid 0.2px #c2bdb8;
   border-radius: 20px;
   grid-area: h;
+}
+@media (min-width: 431px) and (max-width: 800px) {
+  #sec4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #sec4 h2 {
+    font-size: 27px;
+    padding-left: 10px;
+    margin: 0;
+  }
+  #sec4 .trabajos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 50px;
+  }
+  #sec4 .trabajos .grid {
+    width: 90%;
+  }
+  #sec4 .trabajos .a a img {
+    width: 300px;
+    height: 190px;
+  }
+  #sec4 .trabajos .b a img {
+    width: 300px;
+    height: 190px;
+  }
+}
+@media (min-width: 320px) and (max-width: 430px) {
+  #sec4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #sec4 h2 {
+    font-size: 27px;
+    padding-left: 10px;
+    margin: 0;
+  }
+  #sec4 .trabajos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 50px;
+  }
+  #sec4 .trabajos .grid {
+    width: 90%;
+  }
+  #sec4 .trabajos .a a img {
+    width: 300px;
+    height: 190px;
+  }
+  #sec4 .trabajos .b a img {
+    width: 300px;
+    height: 190px;
+  }
 }
 
 /*# sourceMappingURL=estilos.css.map */

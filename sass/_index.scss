@@ -2,10 +2,7 @@
 
 .sec1 {
   height: 95vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include v.display (column, center, center);
 
   h1 {
     color: black;
@@ -22,12 +19,42 @@
     bottom: 230px;
     right: 290px;
   }
+
+  @include v.tablet {
+    h1 {
+      font-size: 100px;
+      position: relative;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 20px;
+      position: absolute;
+      bottom: 335px;
+      right: 10px;
+      margin: 0;
+    }
+  }
+
+  @include v.celular {
+    h1 {
+      font-size: 70px;
+      position: relative;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 15px;
+      position: absolute;
+      bottom: 340px;
+      right: 10px;
+      margin: 0;
+    }
+  }
 }
 
 #sec2 {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  @include v.display (none, space-around, center);
   height: 100vh;
 
   img {
@@ -50,6 +77,58 @@
       color: black;
       font-size: 35px;
       font-weight: 200;
+    }
+  }
+
+  @include v.tablet {
+    @include v.display (column, center, center);
+
+    img {
+      width: 300px;
+      height: 400px;
+    }
+
+    div {
+      padding-top: 20px;
+      width: 90%;
+
+      h2 {
+        font-size: 30px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      p {
+        padding-top: 10px;
+        font-size: 16px;
+        margin: 0
+      }
+    }
+  }
+
+  @include v.celular {
+    @include v.display (column, center, center);
+
+    img {
+      width: 300px;
+      height: 400px;
+    }
+
+    div {
+      padding-top: 20px;
+      width: 90%;
+
+      h2 {
+        font-size: 30px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      p {
+        padding-top: 5px;
+        font-size: 16px;
+        margin: 0
+      }
     }
   }
 }
@@ -79,6 +158,9 @@
 
       .accordion {
         .accordion-item {
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.253);
+          margin-top: 10px;
+
           .accordion-header {
 
             .accordion-button {
@@ -91,7 +173,7 @@
 
           .accordion-collapse {
             .accordion-body {
-              background-color: #e7e6de;
+              background-color: #d3d3d388;
             }
           }
         }
@@ -101,21 +183,23 @@
     .e {
       .estudios {
         @include v.display(none, space-between, center);
+        width: 95%;
         padding: 10px;
+        margin-top: 10px;
+        background-color: #d3d3d388;
+        border-radius: 10px;
 
         h3 {
           color: black;
-          font-size: 25px;
+          font-size: 20px;
           margin-bottom: 0;
           font-weight: 700;
         }
 
         p {
           color: black;
-          width: 80%;
           margin-bottom: 0;
           font-size: 15px;
-          padding-left: 10px;
         }
       }
     }
@@ -147,6 +231,180 @@
         img {
           width: 50px;
           height: 50px;
+        }
+      }
+    }
+  }
+
+  @include v.tablet {
+    .contenedor {
+      @include v.display(column, space-evenly, center);
+      flex-wrap: none;
+      gap: 20px;
+
+      .divs {
+        width: 90%;
+
+        h2 {
+          text-align: center;
+          font-size: 35px;
+          margin: 0;
+        }
+
+        p {
+          font-size: 10px;
+        }
+
+        .accordion {
+          padding-top: 10px;
+
+          .accordion-item {
+            .accordion-header {
+              .accordion-button {
+                font-size: 15px;
+              }
+            }
+
+            .accordion-collapse {
+              .accordion-body {
+                font-size: 15px
+              }
+            }
+          }
+        }
+      }
+
+      .e {
+        .estudios {
+          @include v.display(none, space-between, center);
+          width: 100%;
+          padding: 5px;
+          border-radius: 5px;
+
+          h3 {
+            font-size: 15px;
+            margin: 0;
+          }
+
+          p {
+            margin: 0;
+            font-size: 10px;
+          }
+        }
+      }
+
+      .c {
+        .contacto {
+          padding: 5px;
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+
+          h3 {
+            font-size: 15px;
+            margin: 0;
+            padding-left: 10px;
+          }
+        }
+      }
+
+      .h {
+        .habilidades {
+          padding-top: 20px;
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  @include v.celular {
+    .contenedor {
+      @include v.display(column, space-evenly, center);
+      flex-wrap: none;
+      gap: 20px;
+
+      .divs {
+        width: 90%;
+
+        h2 {
+          text-align: center;
+          font-size: 35px;
+          margin: 0;
+        }
+
+        p {
+          font-size: 10px;
+        }
+
+        .accordion {
+          padding-top: 10px;
+
+          .accordion-item {
+            .accordion-header {
+              .accordion-button {
+                font-size: 15px;
+              }
+            }
+
+            .accordion-collapse {
+              .accordion-body {
+                font-size: 15px
+              }
+            }
+          }
+        }
+      }
+
+      .e {
+        .estudios {
+          @include v.display(none, space-between, center);
+          width: 100%;
+          padding: 5px;
+          border-radius: 5px;
+
+          h3 {
+            font-size: 10px;
+            margin: 0;
+          }
+
+          p {
+            margin: 0;
+            font-size: 8px;
+          }
+        }
+      }
+
+      .c {
+        .contacto {
+          padding: 5px;
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+
+          h3 {
+            font-size: 15px;
+            margin: 0;
+            padding-left: 10px;
+          }
+        }
+      }
+
+      .h {
+        .habilidades {
+          padding-top: 20px;
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
         }
       }
     }
@@ -238,6 +496,80 @@
       border-radius: 20px;
       grid-area: h;
       @extend %trabajos;
+    }
+  }
+
+  @include v.tablet {
+    @include v.display(column, center, center);
+
+    h2 {
+      font-size: 27px;
+      padding-left: 10px;
+      margin: 0;
+    }
+
+    .trabajos {
+      @include v.display (column, space-evenly, center);
+      padding-top: 50px;
+
+      .grid {
+        width: 90%;
+      }
+
+      .a {
+        a {
+          img {
+            width: 300px;
+            height: 190px;
+          }
+        }
+      }
+
+      .b {
+        a {
+          img {
+            width: 300px;
+            height: 190px;
+          }
+        }
+      }
+    }
+  }
+
+  @include v.celular {
+    @include v.display(column, center, center);
+
+    h2 {
+      font-size: 27px;
+      padding-left: 10px;
+      margin: 0;
+    }
+
+    .trabajos {
+      @include v.display (column, space-evenly, center);
+      padding-top: 50px;
+
+      .grid {
+        width: 90%;
+      }
+
+      .a {
+        a {
+          img {
+            width: 300px;
+            height: 190px;
+          }
+        }
+      }
+
+      .b {
+        a {
+          img {
+            width: 300px;
+            height: 190px;
+          }
+        }
+      }
     }
   }
 }

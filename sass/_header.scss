@@ -64,5 +64,63 @@
         &:hover {
             transform: scale(1.1);
         }
+
+        @include v.tablet {
+            font-size: 18px;
+        }
+
+        @include v.celular {
+            font-size: 15px;
+        }
+    }
+
+    @include v.tablet {
+        padding: 10px;
+
+        .menu {
+
+            .offcanvas {
+                width: 270px;
+
+                .offcanvas-body {
+                    ul {
+                        padding-left: 10px;
+
+                        li {
+
+                            a {
+                                font-size: 17px;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include v.celular {
+        padding: 10px;
+
+        .menu {
+
+            .offcanvas {
+                width: 250px;
+
+                .offcanvas-body {
+                    ul {
+                        padding-left: 10px;
+
+                        li {
+
+                            a {
+                                font-size: 17px;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

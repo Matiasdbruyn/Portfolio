@@ -9,4 +9,18 @@
         font-size: 25px;
         font-weight: normal;
     }
+
+    @include v.tablet {
+        h2 {
+            font-size: 15px;
+            margin: 0;
+        }
+    }
+
+    @include v.celular {
+        h2 {
+            font-size: 11px;
+            margin: 0;
+        }
+    }
 }
