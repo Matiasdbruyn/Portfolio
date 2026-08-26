@@ -7,25 +7,12 @@ export default function Hero() {
   return (
     <section id="inicio" className="hero">
       <div className="container hero-grid">
-        <div>
+        <div className="hero-heading">
           <p className="eyebrow">Portfolio · Buenos Aires, Argentina</p>
           <h1>
             Matias <em>De&nbsp;Bruyn</em>
           </h1>
           <p className={`role-line${fading ? ' fading' : ''}`}>{text}</p>
-          <p className="lede">
-            Licenciado en Nutrición en transición hacia el desarrollo Full Stack. Combino una
-            formación clínica rigurosa con habilidades técnicas de programación para abordar cada
-            proyecto con una mirada integral, autodidacta y enfocada en la mejora continua.
-          </p>
-          <div className="cta-row">
-            <a className="btn btn-primary" href="#experiencia">
-              Ver trayectoria
-            </a>
-            <a className="btn btn-ghost" href="#contacto">
-              Contactar
-            </a>
-          </div>
         </div>
 
         <div className="hero-mark">
@@ -42,6 +29,22 @@ export default function Hero() {
               Nutrición clínica &amp; deportiva
             </li>
           </ul>
+        </div>
+
+        <div className="hero-body">
+          <p className="lede">
+            Licenciado en Nutrición en transición hacia el desarrollo Full Stack. Combino una
+            formación clínica rigurosa con habilidades técnicas de programación para abordar cada
+            proyecto con una mirada integral, autodidacta y enfocada en la mejora continua.
+          </p>
+          <div className="cta-row">
+            <a className="btn btn-primary" href="#experiencia">
+              Ver trayectoria
+            </a>
+            <a className="btn btn-ghost" href="#contacto">
+              Contactar
+            </a>
+          </div>
         </div>
       </div>
     </section>
