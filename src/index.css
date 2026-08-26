@@ -143,7 +143,7 @@ nav.links a:hover::after{ transform:scaleX(1); }
 :root[data-profile="nutricion"] .profile-toggle .leaf{ display:block; }
 @media (max-width:520px){ .profile-toggle span{ display:none; } .profile-toggle{ padding:0 11px; } }
 
-@media (max-width:900px){
+@media (max-width:1050px){
   nav.links{
     position:fixed; inset:64px 0 auto 0; margin:0 12px; padding:18px;
     background:var(--surface); border:1px solid var(--line); border-radius:16px;
