@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { IconSun, IconMoon, IconMenu } from './Icons.jsx'
+import { IconSun, IconMoon, IconMenu, IconCode, IconLeaf } from './Icons.jsx'
 
 const LINKS = [
   { href: '#perfil', label: 'Sobre mí' },
@@ -12,6 +12,9 @@ const LINKS = [
 
 export default function Header() {
   const [navOpen, setNavOpen] = useState(false)
+  const [profile, setProfile] = useState(
+    () => document.documentElement.getAttribute('data-profile') || 'dev',
+  )
 
   // El menú mobile se muestra/oculta con una clase en <body> (así el CSS que
   // posiciona el panel fijo no depende de dónde está el header en el árbol).
@@ -33,6 +36,21 @@ export default function Header() {
     }
   }
 
+  function toggleProfile() {
+    const root = document.documentElement
+    const next = profile === 'dev' ? 'nutricion' : 'dev'
+    root.setAttribute('data-profile', next)
+    setProfile(next)
+    try {
+      localStorage.setItem('mdb-profile', next)
+    } catch {
+      // localStorage puede no estar disponible (modo privado, etc.) — no es crítico.
+    }
+    // Avisa a otros componentes (ej. el acordeón de Certificados, si está abierto)
+    // para que recalculen lo que dependa de qué tarjetas quedan visibles.
+    window.dispatchEvent(new Event('profile-change'))
+  }
+
   return (
     <header className="site">
       <div className="container nav-row">
@@ -49,6 +67,18 @@ export default function Header() {
         </nav>
 
         <div className="nav-actions">
+          <button
+            className="profile-toggle"
+            id="profileToggle"
+            type="button"
+            aria-label="Cambiar entre perfil desarrollador y nutricionista"
+            aria-pressed={profile === 'nutricion'}
+            onClick={toggleProfile}
+          >
+            <IconCode className="code" />
+            <IconLeaf className="leaf" />
+            <span>{profile === 'nutricion' ? 'Nutrición' : 'Desarrollo'}</span>
+          </button>
           <button
             className="icon-btn"
             id="themeToggle"

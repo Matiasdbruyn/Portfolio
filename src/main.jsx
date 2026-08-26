@@ -13,6 +13,15 @@ try {
   // localStorage puede no estar disponible — el sitio simplemente usa el tema del sistema.
 }
 
+// Perfil activo (desarrollador / nutricionista): a diferencia del tema, siempre
+// queda explícito (por defecto "dev"), para que Experiencia/Formación sepan qué mostrar.
+try {
+  const storedProfile = localStorage.getItem('mdb-profile')
+  document.documentElement.setAttribute('data-profile', storedProfile === 'nutricion' ? 'nutricion' : 'dev')
+} catch {
+  document.documentElement.setAttribute('data-profile', 'dev')
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />

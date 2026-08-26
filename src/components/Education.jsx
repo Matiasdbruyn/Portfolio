@@ -12,17 +12,18 @@ import { IconChevronDown, IconAward } from './Icons.jsx'
 // import suplementacionCert from '../assets/certificados/suplementacion-deportiva.jpg'
 
 const EDUCATION = [
-  { title: 'Desarrollo Web Full Stack', org: 'Coderhouse', dates: '2025 — actualidad', state: 'En curso', progress: true },
-  { title: 'Desarrollo Web', org: 'Coderhouse', dates: '2022', state: 'Completado' },
-  { title: 'Licenciatura en Nutrición', org: 'Universidad Isalud', dates: '2019 — 2025', state: 'Graduado' },
-  { title: 'Nutrición Deportiva', org: 'FeDUA', dates: '2026', state: 'Completado' },
+  { title: 'Desarrollo Web Full Stack', org: 'Coderhouse', dates: '2025 — actualidad', state: 'En curso', progress: true, category: 'dev' },
+  { title: 'Desarrollo Web', org: 'Coderhouse', dates: '2022', state: 'Completado', category: 'dev' },
+  { title: 'Licenciatura en Nutrición', org: 'Universidad Isalud', dates: '2019 — 2025', state: 'Graduado', category: 'ambos' },
+  { title: 'Nutrición Deportiva', org: 'FeDUA', dates: '2026', state: 'Completado', category: 'nutricion' },
   {
     title: 'Suplementación deportiva y ayudas ergogénicas',
     org: 'Suplementando conCiencia',
     dates: '2026',
     state: 'Completado',
+    category: 'nutricion',
   },
-  { title: 'Técnico en Multimedios', org: 'Colegio San Juan XXIII', dates: '2012 — 2018', state: 'Completado' },
+  { title: 'Técnico en Multimedios', org: 'Colegio San Juan XXIII', dates: '2012 — 2018', state: 'Completado', category: 'ambos' },
 ]
 
 const CERT_GROUPS = [
@@ -35,6 +36,7 @@ const CERT_GROUPS = [
         dates: '2012 — 2018',
         alt: 'Certificado de Técnico en Multimedios',
         image: null, // image: tecnicoMultimediosCert,
+        category: 'ambos',
       },
       {
         title: 'Licenciatura en Nutrición',
@@ -42,6 +44,7 @@ const CERT_GROUPS = [
         dates: '2019 — 2025',
         alt: 'Diploma de Licenciatura en Nutrición',
         image: null, // image: licenciaturaNutricionCert,
+        category: 'ambos',
       },
     ],
   },
@@ -54,6 +57,7 @@ const CERT_GROUPS = [
         dates: '2022',
         alt: 'Certificado de Desarrollo Web',
         image: null, // image: desarrolloWebCert,
+        category: 'dev',
       },
       {
         title: 'Nutrición Deportiva',
@@ -61,6 +65,7 @@ const CERT_GROUPS = [
         dates: '2026',
         alt: 'Certificado de Nutrición Deportiva',
         image: null, // image: nutricionDeportivaCert,
+        category: 'nutricion',
       },
       {
         title: 'Suplementación deportiva y ayudas ergogénicas',
@@ -68,6 +73,7 @@ const CERT_GROUPS = [
         dates: '2026',
         alt: 'Certificado de Suplementación deportiva y ayudas ergogénicas',
         image: null, // image: suplementacionCert,
+        category: 'nutricion',
       },
     ],
   },
@@ -75,7 +81,7 @@ const CERT_GROUPS = [
 
 function CertCard({ item }) {
   return (
-    <article className="cert-card">
+    <article className={`cert-card cat-${item.category}`}>
       {item.image ? (
         <img src={item.image} alt={item.alt} />
       ) : (
@@ -101,15 +107,20 @@ export default function Education() {
   const [certsOpen, setCertsOpen] = useState(false)
   const panelRef = useRef(null)
 
-  // Recalcula la altura si la ventana cambia de tamaño mientras el panel está abierto.
+  // Recalcula la altura si la ventana cambia de tamaño, o si cambia el perfil activo
+  // (algunas tarjetas se ocultan/muestran), mientras el panel está abierto.
   useEffect(() => {
-    function handleResize() {
+    function recalcHeight() {
       if (certsOpen && panelRef.current) {
         panelRef.current.style.maxHeight = `${panelRef.current.scrollHeight}px`
       }
     }
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
+    window.addEventListener('resize', recalcHeight)
+    window.addEventListener('profile-change', recalcHeight)
+    return () => {
+      window.removeEventListener('resize', recalcHeight)
+      window.removeEventListener('profile-change', recalcHeight)
+    }
   }, [certsOpen])
 
   function handleTransitionEnd(event) {
@@ -144,7 +155,7 @@ export default function Education() {
 
         <div className="edu-grid reveal" ref={gridRef}>
           {EDUCATION.map((edu) => (
-            <div className="edu-card" key={edu.title}>
+            <div className={`edu-card cat-${edu.category}`} key={edu.title}>
               <div className="edu-top">
                 <h3>{edu.title}</h3>
                 <span className={`badge${edu.progress ? ' state-progress' : ''}`}>{edu.state}</span>

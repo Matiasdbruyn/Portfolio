@@ -5,12 +5,14 @@ const JOBS = [
     role: 'Pasantía Diseño y Comunicación',
     org: 'Incucai',
     dates: '2018 — 2019',
+    category: 'dev',
     bullets: ['Diseño de contenido digital para redes sociales.', 'Desarrollo de piezas gráficas.'],
   },
   {
     role: 'Capacitador de Sistema',
     org: 'Bymovi',
     dates: '2022 — 2023',
+    category: 'dev',
     bullets: [
       'Implementación y soporte técnico del sistema.',
       'Coordinación entre equipo técnico y usuarios finales.',
@@ -21,6 +23,7 @@ const JOBS = [
     role: 'Prácticas Comunitarias',
     org: 'Centro de Personas Mayores',
     dates: '2024',
+    category: 'nutricion',
     bullets: [
       'Charlas educativas sobre nutrición para adultos mayores.',
       'Dinámicas lúdicas para refuerzo de contenidos.',
@@ -30,6 +33,7 @@ const JOBS = [
     role: 'Prácticas Hospitalarias',
     org: 'Hospital R. Gutiérrez',
     dates: '2025',
+    category: 'nutricion',
     bullets: [
       'Elaboración de planillas de alimentación para pacientes.',
       'Presentación de casos clínicos en ateneos hospitalarios.',
@@ -38,7 +42,8 @@ const JOBS = [
   {
     role: 'Maquetador CMS',
     org: 'Evirtual',
-    dates: '2023 — Actualidad',
+    dates: '2023',
+    category: 'dev',
     current: true,
     bullets: [
       'Gestión y resolución de tickets a través de Jira, respetando tiempos estimados.',
@@ -62,7 +67,7 @@ export default function Experience() {
 
         <div className="timeline reveal" ref={timelineRef}>
           {JOBS.map((job) => (
-            <div key={job.role} className={`t-item${job.current ? ' current' : ''}`}>
+            <div key={job.role} className={`t-item cat-${job.category}${job.current ? ' current' : ''}`}>
               <div className="t-head">
                 <h3>{job.role}</h3>
                 <span className="t-date">{job.dates}</span>

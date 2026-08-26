@@ -124,6 +124,21 @@ nav.links a:hover::after{ transform:scaleX(1); }
 }
 .menu-btn{ display:none; }
 
+/* Toggle de perfil (desarrollador / nutricionista) */
+.profile-toggle{
+  display:inline-flex; align-items:center; gap:8px; height:40px; padding:0 16px 0 14px;
+  border-radius:999px; border:1px solid var(--line); background:var(--surface); color:var(--ink-soft);
+  font-family:var(--font-body); font-weight:600; font-size:.86rem; cursor:pointer;
+  transition:border-color .15s ease, color .15s ease;
+}
+.profile-toggle:hover{ color:var(--ink); border-color:var(--line-strong); }
+.profile-toggle svg{ width:17px; height:17px; flex:none; }
+.profile-toggle .leaf{ display:none; color:var(--green-deep); }
+.profile-toggle .code{ display:block; }
+:root[data-profile="nutricion"] .profile-toggle .code{ display:none; }
+:root[data-profile="nutricion"] .profile-toggle .leaf{ display:block; }
+@media (max-width:520px){ .profile-toggle span{ display:none; } .profile-toggle{ padding:0 11px; } }
+
 @media (max-width:760px){
   nav.links{
     position:fixed; inset:64px 0 auto 0; margin:0 12px; padding:18px;
@@ -292,7 +307,10 @@ section:last-of-type{ border-bottom:none; }
 .cert-group{ margin-bottom:clamp(32px,5vw,48px); }
 .cert-group:last-child{ margin-bottom:0; }
 .cert-group-title{ font-style:italic; font-size:1.12rem; color:var(--red); font-weight:600; margin-bottom:18px; }
-.cert-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:16px; }
+/* auto-fill (no auto-fit): con el filtro de perfil un grupo puede quedar con una
+   sola tarjeta visible; con auto-fit esa tarjeta se estira a todo el ancho y la
+   caja de imagen (relación fija 4:3) se vuelve gigante. auto-fill la mantiene angosta. */
+.cert-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:16px; }
 .cert-card{
   background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden;
   display:flex; flex-direction:column; transition:box-shadow .2s ease, transform .2s ease;
@@ -345,3 +363,7 @@ footer{ padding-block:28px; }
 .foot-row p{ font-size:.86rem; color:var(--ink-faint); }
 .to-top{ display:inline-flex; align-items:center; gap:6px; font-size:.86rem; font-weight:500; text-decoration:none; color:var(--ink-soft); }
 .to-top:hover{ color:var(--red); }
+
+/* ---------- Filtro por perfil (Experiencia / Formación / Certificados) ---------- */
+:root[data-profile="dev"] .cat-nutricion{ display:none; }
+:root[data-profile="nutricion"] .cat-dev{ display:none; }

@@ -93,6 +93,15 @@ export function IconLinkedIn(props) {
   )
 }
 
+export function IconLeaf(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M5 19c8-1 13-6 14-14-8 1-13 6-14 14Z" />
+      <path d="M6 18c2-3 5-6 9-9" />
+    </svg>
+  )
+}
+
 export function IconGithub(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...props}>
