@@ -1,5 +1,5 @@
 import useReveal from '../hooks/useReveal.js'
-import { IconMail, IconPhone, IconWhatsapp, IconLinkedIn, IconGithub } from './Icons.jsx'
+import { IconMail, IconWhatsapp, IconLinkedIn, IconGithub } from './Icons.jsx'
 
 const CONTACTS = [
   {
@@ -7,12 +7,6 @@ const CONTACTS = [
     value: 'matiasdbruyn@gmail.com',
     href: 'mailto:matiasdbruyn@gmail.com',
     Icon: IconMail,
-  },
-  {
-    key: 'Teléfono',
-    value: '11 3569-8876',
-    href: 'tel:+541135698876',
-    Icon: IconPhone,
   },
   {
     key: 'WhatsApp',
