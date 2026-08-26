@@ -2,18 +2,6 @@ import { useState } from 'react'
 import useReveal from '../hooks/useReveal.js'
 import Lightbox from './Lightbox.jsx'
 
-// Para agregar cada certificado: poné el archivo en src/assets/certificados/ con
-// este mismo nombre, descomentá su import acá abajo, y descomentá el campo
-// "cert" correspondiente en EDUCATION (más abajo en este archivo). El botón
-// "Certificado" de esa tarjeta se activa solo y lo abre en grande al tocarlo.
-// import tecnicoMultimediosCert from '../assets/certificados/tecnico-multimedios.jpg'
-// import licenciaturaNutricionCert from '../assets/certificados/licenciatura-nutricion.jpg'
-// import desarrolloWebCert from '../assets/certificados/desarrollo-web.jpg'
-// import nutricionDeportivaCert from '../assets/certificados/nutricion-deportiva.jpg'
-// import suplementacionCert from '../assets/certificados/suplementacion-deportiva.jpg'
-
-// Orden cronológico (izquierda a derecha, por año de inicio).
-// "cert" queda undefined en lo que todavía está en curso (no tiene certificado de finalización).
 const EDUCATION = [
   {
     title: 'Técnico en Multimedios',
@@ -21,7 +9,7 @@ const EDUCATION = [
     dates: '2012 — 2018',
     state: 'Completado',
     category: 'ambos',
-    cert: null, // cert: tecnicoMultimediosCert,
+    cert: null,
   },
   {
     title: 'Licenciatura en Nutrición',
@@ -29,7 +17,7 @@ const EDUCATION = [
     dates: '2019 — 2025',
     state: 'Graduado',
     category: 'ambos',
-    cert: null, // cert: licenciaturaNutricionCert,
+    cert: null,
   },
   {
     title: 'Desarrollo Web',
@@ -37,7 +25,7 @@ const EDUCATION = [
     dates: '2022',
     state: 'Completado',
     category: 'dev',
-    cert: null, // cert: desarrolloWebCert,
+    cert: null,
   },
   {
     title: 'Desarrollo Web Full Stack',
@@ -46,7 +34,6 @@ const EDUCATION = [
     state: 'En curso',
     progress: true,
     category: 'dev',
-    // Sin "cert": todavía no hay certificado de un curso en curso.
   },
   {
     title: 'Nutrición Deportiva',
@@ -54,7 +41,7 @@ const EDUCATION = [
     dates: '2026',
     state: 'Completado',
     category: 'nutricion',
-    cert: null, // cert: nutricionDeportivaCert,
+    cert: null,
   },
   {
     title: 'Suplementación deportiva y ayudas ergogénicas',
@@ -62,7 +49,7 @@ const EDUCATION = [
     dates: '2026',
     state: 'Completado',
     category: 'nutricion',
-    cert: null, // cert: suplementacionCert,
+    cert: null,
   },
 ]
 

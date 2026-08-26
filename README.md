@@ -32,4 +32,4 @@ src/
 ## Contenido para completar
 
 - **Proyecto "Ecommerce"**: no tiene captura (es una API backend sin interfaz visual). Si querés agregar una igual, editá `src/components/Projects.jsx`.
-- **Certificados**: las 5 tarjetas dentro de "Formación → Certificados" tienen un espacio marcado ("Espacio para el certificado") en vez de imagen. Para completarlas, en `src/components/Education.jsx`, agregá el import de cada imagen (ponela en `src/assets/`) y reemplazá el bloque `<div className="cert-image-slot">` de esa tarjeta por `<img src={...} alt="..." />`, tal como ya está hecho en `Projects.jsx`.
+- **Certificados**: cada tarjeta de Formación académica tiene un botón "Certificado" que hoy está deshabilitado. Para activarlo: guardá el archivo en `src/assets/certificados/` (nombres sugeridos: `tecnico-multimedios.jpg`, `licenciatura-nutricion.jpg`, `desarrollo-web.jpg`, `nutricion-deportiva.jpg`, `suplementacion-deportiva.jpg`), importalo en `src/components/Education.jsx`, y asignalo al campo `cert` del ítem correspondiente en `EDUCATION` (está en `null`). El botón se habilita solo y abre la imagen en un lightbox.

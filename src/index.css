@@ -1,4 +1,3 @@
-/* ---------- Tokens ---------- */
 :root{
   --bg:#F6F6F6;
   --surface:#F8F6F1;
@@ -53,7 +52,6 @@
   --shadow-1: 0 10px 28px rgba(0,0,0,0.4);
 }
 
-/* ---------- Reset-ish ---------- */
 *,*::before,*::after{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
@@ -90,7 +88,6 @@ h1,h2,h3,h4{ font-family:var(--font-display); text-wrap:balance; font-weight:600
   :root:not([data-theme="light"]) .eyebrow{ color:var(--green-deep); }
 }
 
-/* ---------- Header / Nav ---------- */
 header.site{
   position:sticky; top:0; z-index:100;
   background:color-mix(in srgb, var(--bg) 88%, transparent);
@@ -128,7 +125,6 @@ nav.links a:hover::after{ transform:scaleX(1); }
 }
 .menu-btn{ display:none; }
 
-/* Toggle de perfil (desarrollador / nutricionista) */
 .profile-toggle{
   display:inline-flex; align-items:center; gap:8px; height:40px; padding:0 16px 0 14px;
   border-radius:999px; border:1px solid var(--line); background:var(--surface); color:var(--ink-soft);
@@ -159,7 +155,6 @@ nav.links a:hover::after{ transform:scaleX(1); }
   .menu-btn{ display:grid; }
 }
 
-/* ---------- Buttons ---------- */
 .btn{
   display:inline-flex; align-items:center; gap:.5em; font-family:var(--font-body); font-weight:600;
   font-size:.96rem; padding:13px 24px; border-radius:999px; text-decoration:none; border:1px solid transparent;
@@ -171,7 +166,6 @@ nav.links a:hover::after{ transform:scaleX(1); }
 .btn-ghost{ background:transparent; border-color:var(--line-strong); color:var(--ink); }
 .btn-ghost:hover{ border-color:var(--red); color:var(--red); }
 
-/* ---------- Hero ---------- */
 .hero{ padding-block: clamp(48px,8vw,96px) clamp(40px,6vw,72px); border-bottom:1px solid var(--line); }
 .hero-grid{
   display:grid; grid-template-columns: 1.25fr .75fr; column-gap:clamp(28px,5vw,64px); row-gap:0;
@@ -199,7 +193,6 @@ nav.links a:hover::after{ transform:scaleX(1); }
 .hero p.lede{ margin-top:18px; max-width:56ch; color:var(--ink-soft); font-size:1.06rem; }
 .hero .cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; }
 
-/* Hero mark */
 .hero-mark{ display:flex; flex-direction:column; align-items:center; gap:22px; }
 .mark-blob{
   position:relative; width:clamp(210px,24vw,270px); aspect-ratio:1; overflow:hidden;
@@ -222,7 +215,6 @@ nav.links a:hover::after{ transform:scaleX(1); }
 .dot-green{ background:var(--green); }
 .dot-red{ background:var(--red); }
 
-/* ---------- Section shell ---------- */
 section{ padding-block:clamp(56px,8vw,96px); border-bottom:1px solid var(--line); }
 section:last-of-type{ border-bottom:none; }
 .section-head{ max-width:62ch; margin-bottom:clamp(32px,5vw,52px); }
@@ -235,7 +227,6 @@ section:last-of-type{ border-bottom:none; }
   .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
 }
 
-/* ---------- About ---------- */
 .about-grid{ max-width:70ch; }
 .about-grid p{ font-size:1.06rem; color:var(--ink-soft); }
 .about-grid p + p{ margin-top:16px; }
@@ -245,7 +236,6 @@ section:last-of-type{ border-bottom:none; }
   border:1px solid var(--line-strong); color:var(--ink-soft); background:var(--surface);
 }
 
-/* ---------- Proyectos ---------- */
 .proj-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; }
 .proj-card{
   background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden;
@@ -269,7 +259,6 @@ section:last-of-type{ border-bottom:none; }
 .proj-link:hover{ color:var(--red); }
 .proj-link svg{ width:14px; height:14px; }
 
-/* ---------- Timeline (experience) ---------- */
 .timeline{ position:relative; }
 .t-item{ position:relative; padding-left:32px; padding-bottom:clamp(30px,4vw,44px); border-left:2px solid var(--line); }
 .t-item:last-child{ padding-bottom:0; }
@@ -290,7 +279,6 @@ section:last-of-type{ border-bottom:none; }
 .t-list li{ font-size:.97rem; color:var(--ink-soft); position:relative; padding-left:18px; }
 .t-list li::before{ content:"—"; position:absolute; left:0; color:var(--ink-faint); }
 
-/* ---------- Education cards ---------- */
 .edu-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:16px; }
 .edu-card{
   border:1px solid var(--line); border-radius:16px; background:var(--surface); padding:22px;
@@ -315,7 +303,6 @@ section:last-of-type{ border-bottom:none; }
 .cert-btn:hover{ border-color:var(--green); }
 .cert-btn:disabled{ opacity:.4; cursor:not-allowed; }
 
-/* ---------- Lightbox (certificados, capturas) ---------- */
 .lightbox{
   position:fixed; inset:0; z-index:300; background:rgba(15,14,12,.82);
   display:flex; align-items:center; justify-content:center; padding:32px;
@@ -329,7 +316,6 @@ section:last-of-type{ border-bottom:none; }
 .lightbox-close:hover{ color:var(--red); }
 .lightbox-close svg{ width:18px; height:18px; }
 
-/* ---------- Skills ---------- */
 .skills-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:16px; }
 .skill-card{ border:1px solid var(--line); border-radius:16px; background:var(--surface); padding:22px 24px; }
 .skill-card h3{ font-size:.82rem; text-transform:uppercase; letter-spacing:.06em; color:var(--green-deep); font-weight:700; }
@@ -342,7 +328,6 @@ section:last-of-type{ border-bottom:none; }
 .lang-row .k{ font-size:.82rem; text-transform:uppercase; letter-spacing:.06em; color:var(--green-deep); font-weight:700; }
 .lang-row .v{ font-weight:600; }
 
-/* ---------- Contact ---------- */
 .contact-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:16px; }
 .contact-card{
   display:flex; align-items:center; gap:14px; border:1px solid var(--line); border-radius:16px;
@@ -358,13 +343,11 @@ section:last-of-type{ border-bottom:none; }
 .contact-card .k{ font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); font-weight:700; }
 .contact-card .v{ font-weight:600; font-size:.97rem; word-break:break-word; }
 
-/* ---------- Footer ---------- */
 footer{ padding-block:28px; }
 .foot-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
 .foot-row p{ font-size:.86rem; color:var(--ink-faint); }
 .to-top{ display:inline-flex; align-items:center; gap:6px; font-size:.86rem; font-weight:500; text-decoration:none; color:var(--ink-soft); }
 .to-top:hover{ color:var(--red); }
 
-/* ---------- Filtro por perfil (Experiencia / Formación / Certificados) ---------- */
 :root[data-profile="dev"] .cat-nutricion{ display:none; }
 :root[data-profile="nutricion"] .cat-dev{ display:none; }

@@ -1,7 +1,5 @@
 import { useEffect, useRef } from 'react'
 
-// Devuelve un ref para poner en cualquier elemento con className="reveal".
-// Cuando el elemento entra en pantalla, le agrega la clase "is-visible" (dispara la transición del CSS).
 export default function useReveal() {
   const ref = useRef(null)
 

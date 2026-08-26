@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react'
 const ROLES = ['Desarrollador Web Full Stack', 'Licenciado en Nutrición', 'Maquetador CMS']
 const STATIC_TEXT = 'Desarrollador Web Full Stack · Lic. en Nutrición'
 
-// Rota el texto de rol del hero cada X ms, con un pequeño fade. Si el usuario
-// prefiere menos movimiento, muestra un texto fijo que combina ambos roles.
 export default function useRoleSwitcher(intervalMs = 2800) {
   const [index, setIndex] = useState(0)
   const [fading, setFading] = useState(false)

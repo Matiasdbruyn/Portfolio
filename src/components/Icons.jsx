@@ -1,5 +1,3 @@
-// Íconos de línea, todos con el mismo estilo (stroke, sin relleno) para que se vean consistentes.
-
 export function IconSun(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" {...props}>

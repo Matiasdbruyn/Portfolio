@@ -16,8 +16,6 @@ export default function Header() {
     () => document.documentElement.getAttribute('data-profile') || 'dev',
   )
 
-  // El menú mobile se muestra/oculta con una clase en <body> (así el CSS que
-  // posiciona el panel fijo no depende de dónde está el header en el árbol).
   useEffect(() => {
     document.body.classList.toggle('nav-open', navOpen)
   }, [navOpen])
@@ -31,9 +29,7 @@ export default function Header() {
     root.setAttribute('data-theme', next)
     try {
       localStorage.setItem('mdb-theme', next)
-    } catch {
-      // localStorage puede no estar disponible (modo privado, etc.) — no es crítico.
-    }
+    } catch {}
   }
 
   function toggleProfile() {
@@ -43,12 +39,7 @@ export default function Header() {
     setProfile(next)
     try {
       localStorage.setItem('mdb-profile', next)
-    } catch {
-      // localStorage puede no estar disponible (modo privado, etc.) — no es crítico.
-    }
-    // Avisa a otros componentes (ej. el acordeón de Certificados, si está abierto)
-    // para que recalculen lo que dependa de qué tarjetas quedan visibles.
-    window.dispatchEvent(new Event('profile-change'))
+    } catch {}
   }
 
   return (

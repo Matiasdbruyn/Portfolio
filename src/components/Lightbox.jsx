@@ -1,8 +1,6 @@
 import { useEffect } from 'react'
 import { IconClose } from './Icons.jsx'
 
-// Overlay simple para mostrar una imagen en grande (certificados, capturas, etc.).
-// Se cierra con la X, clickeando fuera de la imagen, o con Escape.
 export default function Lightbox({ src, alt, onClose }) {
   useEffect(() => {
     function handleKeyDown(event) {
