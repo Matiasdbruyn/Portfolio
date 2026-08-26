@@ -96,8 +96,11 @@ export function IconLinkedIn(props) {
 export function IconWhatsapp(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M7 20.5 8.2 17A7.9 7.9 0 1 1 11.3 19Z" />
-      <path d="M9.2 9.3c-.1 1 .1 2 1.4 3.4 1.3 1.3 2.4 1.6 3.4 1.5.6-.1 1-.6.9-1.3l-.2-.9-2-1-.7.9c-.5-.2-1.1-.6-1.6-1.1s-.9-1.1-1.1-1.6l.9-.7-1-2Z" />
+      <rect x="3.5" y="4.5" width="17" height="12" rx="6" />
+      <path d="M8 16.5 6.5 20 10.5 17" />
+      <circle cx="9" cy="10.5" r=".7" fill="currentColor" stroke="none" />
+      <circle cx="12" cy="10.5" r=".7" fill="currentColor" stroke="none" />
+      <circle cx="15" cy="10.5" r=".7" fill="currentColor" stroke="none" />
     </svg>
   )
 }
@@ -107,14 +110,6 @@ export function IconLeaf(props) {
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...props}>
       <path d="M5 19c8-1 13-6 14-14-8 1-13 6-14 14Z" />
       <path d="M6 18c2-3 5-6 9-9" />
-    </svg>
-  )
-}
-
-export function IconGithub(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2-.2 4.5-1 4.5-4.5a3.6 3.6 0 0 0-1-2.5 3.3 3.3 0 0 0-.1-2.5s-.9-.3-2.9 1a10 10 0 0 0-5 0c-2-1.3-2.9-1-2.9-1a3.3 3.3 0 0 0-.1 2.5 3.6 3.6 0 0 0-1 2.5c0 3.5 2.5 4.3 4.5 4.5-.6.6-.6 1.2-.5 2V19" />
     </svg>
   )
 }
