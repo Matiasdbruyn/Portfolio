@@ -1,4 +1,5 @@
 import useRoleSwitcher from '../hooks/useRoleSwitcher.js'
+import photo from '../assets/yo.jpg'
 
 export default function Hero() {
   const { text, fading } = useRoleSwitcher()
@@ -27,9 +28,9 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-mark" aria-hidden="true">
+        <div className="hero-mark">
           <div className="mark-blob">
-            <span>MDB</span>
+            <img src={photo} alt="Foto de Matias De Bruyn" />
           </div>
           <ul className="mark-tags">
             <li>

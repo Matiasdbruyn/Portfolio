@@ -93,6 +93,15 @@ export function IconLinkedIn(props) {
   )
 }
 
+export function IconWhatsapp(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M7 20.5 8.2 17A7.9 7.9 0 1 1 11.3 19Z" />
+      <path d="M9.2 9.3c-.1 1 .1 2 1.4 3.4 1.3 1.3 2.4 1.6 3.4 1.5.6-.1 1-.6.9-1.3l-.2-.9-2-1-.7.9c-.5-.2-1.1-.6-1.6-1.1s-.9-1.1-1.1-1.6l.9-.7-1-2Z" />
+    </svg>
+  )
+}
+
 export function IconLeaf(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...props}>

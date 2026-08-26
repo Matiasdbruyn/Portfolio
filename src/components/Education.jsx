@@ -11,10 +11,12 @@ import { IconChevronDown, IconAward } from './Icons.jsx'
 // import nutricionDeportivaCert from '../assets/certificados/nutricion-deportiva.jpg'
 // import suplementacionCert from '../assets/certificados/suplementacion-deportiva.jpg'
 
+// Orden cronológico (izquierda a derecha, por año de inicio).
 const EDUCATION = [
-  { title: 'Desarrollo Web Full Stack', org: 'Coderhouse', dates: '2025 — actualidad', state: 'En curso', progress: true, category: 'dev' },
-  { title: 'Desarrollo Web', org: 'Coderhouse', dates: '2022', state: 'Completado', category: 'dev' },
+  { title: 'Técnico en Multimedios', org: 'Colegio San Juan XXIII', dates: '2012 — 2018', state: 'Completado', category: 'ambos' },
   { title: 'Licenciatura en Nutrición', org: 'Universidad Isalud', dates: '2019 — 2025', state: 'Graduado', category: 'ambos' },
+  { title: 'Desarrollo Web', org: 'Coderhouse', dates: '2022', state: 'Completado', category: 'dev' },
+  { title: 'Desarrollo Web Full Stack', org: 'Coderhouse', dates: '2025 — actualidad', state: 'En curso', progress: true, category: 'dev' },
   { title: 'Nutrición Deportiva', org: 'FeDUA', dates: '2026', state: 'Completado', category: 'nutricion' },
   {
     title: 'Suplementación deportiva y ayudas ergogénicas',
@@ -23,7 +25,6 @@ const EDUCATION = [
     state: 'Completado',
     category: 'nutricion',
   },
-  { title: 'Técnico en Multimedios', org: 'Colegio San Juan XXIII', dates: '2012 — 2018', state: 'Completado', category: 'ambos' },
 ]
 
 const CERT_GROUPS = [
