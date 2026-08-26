@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import useReveal from '../hooks/useReveal.js'
-import { IconChevronDown, IconAward } from './Icons.jsx'
+import Lightbox from './Lightbox.jsx'
 
 // Para agregar cada certificado: poné el archivo en src/assets/certificados/ con
 // este mismo nombre, descomentá su import acá abajo, y descomentá el campo
-// "image" correspondiente en CERT_GROUPS (más abajo en este archivo).
+// "cert" correspondiente en EDUCATION (más abajo en este archivo). El botón
+// "Certificado" de esa tarjeta se activa solo y lo abre en grande al tocarlo.
 // import tecnicoMultimediosCert from '../assets/certificados/tecnico-multimedios.jpg'
 // import licenciaturaNutricionCert from '../assets/certificados/licenciatura-nutricion.jpg'
 // import desarrolloWebCert from '../assets/certificados/desarrollo-web.jpg'
@@ -12,140 +13,63 @@ import { IconChevronDown, IconAward } from './Icons.jsx'
 // import suplementacionCert from '../assets/certificados/suplementacion-deportiva.jpg'
 
 // Orden cronológico (izquierda a derecha, por año de inicio).
+// "cert" queda undefined en lo que todavía está en curso (no tiene certificado de finalización).
 const EDUCATION = [
-  { title: 'Técnico en Multimedios', org: 'Colegio San Juan XXIII', dates: '2012 — 2018', state: 'Completado', category: 'ambos' },
-  { title: 'Licenciatura en Nutrición', org: 'Universidad Isalud', dates: '2019 — 2025', state: 'Graduado', category: 'ambos' },
-  { title: 'Desarrollo Web', org: 'Coderhouse', dates: '2022', state: 'Completado', category: 'dev' },
-  { title: 'Desarrollo Web Full Stack', org: 'Coderhouse', dates: '2025 — actualidad', state: 'En curso', progress: true, category: 'dev' },
-  { title: 'Nutrición Deportiva', org: 'FeDUA', dates: '2026', state: 'Completado', category: 'nutricion' },
+  {
+    title: 'Técnico en Multimedios',
+    org: 'Colegio San Juan XXIII',
+    dates: '2012 — 2018',
+    state: 'Completado',
+    category: 'ambos',
+    cert: null, // cert: tecnicoMultimediosCert,
+  },
+  {
+    title: 'Licenciatura en Nutrición',
+    org: 'Universidad Isalud',
+    dates: '2019 — 2025',
+    state: 'Graduado',
+    category: 'ambos',
+    cert: null, // cert: licenciaturaNutricionCert,
+  },
+  {
+    title: 'Desarrollo Web',
+    org: 'Coderhouse',
+    dates: '2022',
+    state: 'Completado',
+    category: 'dev',
+    cert: null, // cert: desarrolloWebCert,
+  },
+  {
+    title: 'Desarrollo Web Full Stack',
+    org: 'Coderhouse',
+    dates: '2025 — actualidad',
+    state: 'En curso',
+    progress: true,
+    category: 'dev',
+    // Sin "cert": todavía no hay certificado de un curso en curso.
+  },
+  {
+    title: 'Nutrición Deportiva',
+    org: 'FeDUA',
+    dates: '2026',
+    state: 'Completado',
+    category: 'nutricion',
+    cert: null, // cert: nutricionDeportivaCert,
+  },
   {
     title: 'Suplementación deportiva y ayudas ergogénicas',
     org: 'Suplementando conCiencia',
     dates: '2026',
     state: 'Completado',
     category: 'nutricion',
+    cert: null, // cert: suplementacionCert,
   },
 ]
-
-const CERT_GROUPS = [
-  {
-    title: 'Carreras',
-    items: [
-      {
-        title: 'Técnico en Multimedios',
-        org: 'Colegio San Juan XXIII',
-        dates: '2012 — 2018',
-        alt: 'Certificado de Técnico en Multimedios',
-        image: null, // image: tecnicoMultimediosCert,
-        category: 'ambos',
-      },
-      {
-        title: 'Licenciatura en Nutrición',
-        org: 'Universidad Isalud',
-        dates: '2019 — 2025',
-        alt: 'Diploma de Licenciatura en Nutrición',
-        image: null, // image: licenciaturaNutricionCert,
-        category: 'ambos',
-      },
-    ],
-  },
-  {
-    title: 'Cursos y certificaciones',
-    items: [
-      {
-        title: 'Desarrollo Web',
-        org: 'Coderhouse',
-        dates: '2022',
-        alt: 'Certificado de Desarrollo Web',
-        image: null, // image: desarrolloWebCert,
-        category: 'dev',
-      },
-      {
-        title: 'Nutrición Deportiva',
-        org: 'FeDUA',
-        dates: '2026',
-        alt: 'Certificado de Nutrición Deportiva',
-        image: null, // image: nutricionDeportivaCert,
-        category: 'nutricion',
-      },
-      {
-        title: 'Suplementación deportiva y ayudas ergogénicas',
-        org: 'Suplementando conCiencia',
-        dates: '2026',
-        alt: 'Certificado de Suplementación deportiva y ayudas ergogénicas',
-        image: null, // image: suplementacionCert,
-        category: 'nutricion',
-      },
-    ],
-  },
-]
-
-function CertCard({ item }) {
-  return (
-    <article className={`cert-card cat-${item.category}`}>
-      {item.image ? (
-        <img src={item.image} alt={item.alt} />
-      ) : (
-        <div className="cert-image-slot" aria-hidden="true">
-          <IconAward />
-          <span>Espacio para el certificado</span>
-        </div>
-      )}
-      <div className="cert-body">
-        <h4>{item.title}</h4>
-        <p className="cert-org">{item.org}</p>
-        <p className="cert-date">{item.dates}</p>
-      </div>
-    </article>
-  )
-}
 
 export default function Education() {
   const headRef = useReveal()
   const gridRef = useReveal()
-  const toggleRowRef = useReveal()
-
-  const [certsOpen, setCertsOpen] = useState(false)
-  const panelRef = useRef(null)
-
-  // Recalcula la altura si la ventana cambia de tamaño, o si cambia el perfil activo
-  // (algunas tarjetas se ocultan/muestran), mientras el panel está abierto.
-  useEffect(() => {
-    function recalcHeight() {
-      if (certsOpen && panelRef.current) {
-        panelRef.current.style.maxHeight = `${panelRef.current.scrollHeight}px`
-      }
-    }
-    window.addEventListener('resize', recalcHeight)
-    window.addEventListener('profile-change', recalcHeight)
-    return () => {
-      window.removeEventListener('resize', recalcHeight)
-      window.removeEventListener('profile-change', recalcHeight)
-    }
-  }, [certsOpen])
-
-  function handleTransitionEnd(event) {
-    if (event.propertyName === 'max-height' && certsOpen && panelRef.current) {
-      panelRef.current.style.maxHeight = 'none'
-    }
-  }
-
-  function toggleCerts() {
-    const panel = panelRef.current
-    if (!panel) return
-    const willOpen = !certsOpen
-    setCertsOpen(willOpen)
-    if (willOpen) {
-      panel.style.maxHeight = `${panel.scrollHeight}px`
-    } else {
-      panel.style.maxHeight = `${panel.scrollHeight}px`
-      // eslint-disable-next-line no-unused-expressions
-      panel.offsetHeight // fuerza reflow para que el colapso anime desde una altura fija
-      requestAnimationFrame(() => {
-        panel.style.maxHeight = '0px'
-      })
-    }
-  }
+  const [openCert, setOpenCert] = useState(null)
 
   return (
     <section id="formacion">
@@ -162,39 +86,28 @@ export default function Education() {
                 <span className={`badge${edu.progress ? ' state-progress' : ''}`}>{edu.state}</span>
               </div>
               <p className="edu-org">{edu.org}</p>
-              <p className="edu-date">{edu.dates}</p>
+              <div className="edu-bottom">
+                <span className="edu-date">{edu.dates}</span>
+                {'cert' in edu && (
+                  <button
+                    className="cert-btn"
+                    type="button"
+                    disabled={!edu.cert}
+                    title={edu.cert ? undefined : 'Certificado próximamente'}
+                    onClick={() => setOpenCert(edu)}
+                  >
+                    Certificado
+                  </button>
+                )}
+              </div>
             </div>
           ))}
         </div>
-
-        <div className="cert-toggle-row reveal" ref={toggleRowRef}>
-          <button
-            className="cert-toggle"
-            type="button"
-            aria-expanded={certsOpen}
-            aria-controls="certPanel"
-            onClick={toggleCerts}
-          >
-            <span>Certificados</span>
-            <IconChevronDown className="chev" />
-          </button>
-        </div>
-
-        <div className="cert-panel" id="certPanel" ref={panelRef} onTransitionEnd={handleTransitionEnd}>
-          <div className="cert-panel-inner">
-            {CERT_GROUPS.map((group) => (
-              <div className="cert-group" key={group.title}>
-                <h3 className="cert-group-title">{group.title}</h3>
-                <div className="cert-grid">
-                  {group.items.map((item) => (
-                    <CertCard item={item} key={item.title} />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
+
+      {openCert && (
+        <Lightbox src={openCert.cert} alt={`Certificado de ${openCert.title}`} onClose={() => setOpenCert(null)} />
+      )}
     </section>
   )
 }

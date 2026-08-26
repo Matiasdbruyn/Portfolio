@@ -105,6 +105,14 @@ export function IconWhatsapp(props) {
   )
 }
 
+export function IconClose(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="m6 6 12 12M18 6 6 18" />
+    </svg>
+  )
+}
+
 export function IconLeaf(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...props}>

@@ -287,47 +287,35 @@ section:last-of-type{ border-bottom:none; }
 .edu-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
 .edu-card h3{ font-size:1.08rem; font-weight:600; line-height:1.35; }
 .edu-org{ font-size:.84rem; letter-spacing:.01em; color:var(--ink-faint); font-weight:500; }
-.edu-date{ font-size:.86rem; color:var(--ink-soft); margin-top:auto; padding-top:10px; border-top:1px solid var(--line); }
+.edu-bottom{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  margin-top:auto; padding-top:10px; border-top:1px solid var(--line);
+}
+.edu-date{ font-size:.86rem; color:var(--ink-soft); }
 .badge.state-progress{ background:var(--red-tint); color:var(--red); }
 
-/* ---------- Certificados ---------- */
-.cert-toggle-row{ margin-top:32px; display:flex; }
-.cert-toggle{
-  display:inline-flex; align-items:center; gap:9px; font-family:var(--font-body); font-weight:600;
-  font-size:.96rem; padding:13px 22px; border-radius:999px; border:1px solid var(--line-strong);
-  background:var(--surface); color:var(--ink); cursor:pointer;
-  transition:border-color .15s ease, color .15s ease;
+.cert-btn{
+  font-family:var(--font-body); font-size:.76rem; font-weight:600; white-space:nowrap;
+  padding:6px 13px; border-radius:999px; border:1px solid var(--line-strong);
+  background:var(--bg); color:var(--green-deep); cursor:pointer;
+  transition:border-color .15s ease, color .15s ease, opacity .15s ease;
 }
-.cert-toggle:hover{ border-color:var(--green); color:var(--green-deep); }
-.cert-toggle .chev{ width:16px; height:16px; transition:transform .25s ease; }
-.cert-toggle[aria-expanded="true"] .chev{ transform:rotate(180deg); }
+.cert-btn:hover{ border-color:var(--green); }
+.cert-btn:disabled{ opacity:.4; cursor:not-allowed; }
 
-.cert-panel{ overflow:hidden; max-height:0; margin-top:28px; transition:max-height .4s ease; }
-@media (prefers-reduced-motion: reduce){ .cert-panel{ transition:none; } }
-
-.cert-group{ margin-bottom:clamp(32px,5vw,48px); }
-.cert-group:last-child{ margin-bottom:0; }
-.cert-group-title{ font-style:italic; font-size:1.12rem; color:var(--red); font-weight:600; margin-bottom:18px; }
-/* auto-fill (no auto-fit): con el filtro de perfil un grupo puede quedar con una
-   sola tarjeta visible; con auto-fit esa tarjeta se estira a todo el ancho y la
-   caja de imagen (relación fija 4:3) se vuelve gigante. auto-fill la mantiene angosta. */
-.cert-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:16px; }
-.cert-card{
-  background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden;
-  display:flex; flex-direction:column; transition:box-shadow .2s ease, transform .2s ease;
+/* ---------- Lightbox (certificados, capturas) ---------- */
+.lightbox{
+  position:fixed; inset:0; z-index:300; background:rgba(15,14,12,.82);
+  display:flex; align-items:center; justify-content:center; padding:32px;
 }
-.cert-card:hover{ box-shadow:var(--shadow-1); transform:translateY(-2px); }
-.cert-image-slot{
-  aspect-ratio:4/3; background:var(--surface-2); border-bottom:1px solid var(--line);
-  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:var(--ink-faint);
+.lightbox img{ max-width:100%; max-height:90vh; border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,.5); display:block; }
+.lightbox-close{
+  position:fixed; top:20px; right:20px; width:44px; height:44px; border-radius:50%;
+  display:grid; place-items:center; background:var(--surface); border:1px solid var(--line);
+  color:var(--ink); cursor:pointer;
 }
-.cert-image-slot svg{ width:26px; height:26px; opacity:.75; }
-.cert-image-slot span{ font-size:.76rem; font-weight:500; }
-.cert-card img{ display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-bottom:1px solid var(--line); }
-.cert-body{ padding:16px 18px 18px; }
-.cert-body h4{ font-size:1.02rem; font-weight:600; line-height:1.35; }
-.cert-org{ font-size:.87rem; color:var(--ink-soft); margin-top:5px; font-weight:500; }
-.cert-date{ font-size:.82rem; color:var(--ink-faint); margin-top:2px; }
+.lightbox-close:hover{ color:var(--red); }
+.lightbox-close svg{ width:18px; height:18px; }
 
 /* ---------- Skills ---------- */
 .skills-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:16px; }
