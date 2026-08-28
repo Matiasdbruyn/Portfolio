@@ -2,6 +2,9 @@ import useRoleSwitcher from '../hooks/useRoleSwitcher.js'
 import photo from '../assets/yo.jpg'
 import { IconFile } from './Icons.jsx'
 
+const CV_DEV = `${import.meta.env.BASE_URL}cv-matias-de-bruyn-dev.pdf`
+const CV_NUTRICION = `${import.meta.env.BASE_URL}cv-matias-de-bruyn-nutricion.pdf`
+
 export default function Hero() {
   const { text, fading } = useRoleSwitcher()
 
@@ -55,7 +58,7 @@ export default function Hero() {
             </a>
             <a
               className="btn btn-ghost cat-dev"
-              href="/cv-matias-de-bruyn-dev.pdf"
+              href={CV_DEV}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -64,7 +67,7 @@ export default function Hero() {
             </a>
             <a
               className="btn btn-ghost cat-nutricion"
-              href="/cv-matias-de-bruyn-nutricion.pdf"
+              href={CV_NUTRICION}
               target="_blank"
               rel="noopener noreferrer"
             >

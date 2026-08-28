@@ -12,15 +12,10 @@ export default function About() {
         </div>
         <div className="about-grid reveal" ref={bodyRef}>
           <p>
-            Soy Licenciado en Nutrición y estoy en proceso de transición hacia el desarrollo web
-            Full Stack. Mi formación clínica me dio método: observar, diagnosticar, plantear un
-            plan y ajustarlo con datos. Hoy aplico esa misma lógica al código.
+            Soy Licenciado en Nutrición y actualmente combino esa formación con el desarrollo web Full Stack. Mi trayectoria clínica me dio un método de trabajo: observar, diagnosticar, plantear un plan y ajustarlo con datos. Hoy aplico esa misma lógica al código.
           </p>
           <p>
-            Me adapto fácilmente al trabajo en equipo, soy autodidacta y estoy comprometido con la
-            mejora continua. Mi paso por distintos entornos laborales, desde consultorios hasta
-            mesas de ayuda técnica, me permitió desarrollar comunicación clara, organización y
-            resolución de problemas bajo tiempos reales.
+            Me adapto fácilmente al trabajo en equipo, soy autodidacta y estoy comprometido con la mejora continua. Mi paso por distintos entornos laborales me permitió desarrollar comunicación clara, organización y resolución de problemas bajo tiempos reales.
           </p>
           <div className="focus-pills">
             <span className="pill">Desarrollo Frontend</span>

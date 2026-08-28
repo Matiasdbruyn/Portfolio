@@ -11,7 +11,7 @@ const PROJECTS = [
     image: diagnomedShot,
     alt: 'Captura del sitio Diagnomed',
     description:
-      'Sitio para un centro médico integral: landing con especialidades (incluye Nutrición), estudios diagnósticos, testimonios y contacto, con navegación por rutas.',
+      'Sitio para un centro médico integral: landing con especialidades, estudios diagnósticos, testimonios y contacto, con navegación por rutas.',
     tags: ['React', 'TypeScript', 'React Router', 'Vite'],
     demo: 'https://matiasdbruyn.github.io/Diagnomed/',
     code: 'https://github.com/Matiasdbruyn/Diagnomed',
@@ -21,7 +21,7 @@ const PROJECTS = [
     image: suplexShot,
     alt: 'Captura del sitio SuPlex',
     description:
-      'Sitio informativo sobre suplementos dietarios, fármacos y nutrición para mejorar salud y rendimiento — el cruce directo entre mis dos formaciones.',
+      'Sitio informativo sobre suplementos dietarios, fármacos y nutrición para mejorar salud y rendimiento.',
     tags: ['HTML', 'SCSS', 'Bootstrap', 'JavaScript'],
     demo: 'https://su-plex.vercel.app/',
     code: 'https://github.com/Matiasdbruyn/SuPlex',
@@ -31,7 +31,7 @@ const PROJECTS = [
     image: null,
     alt: null,
     description:
-      'API REST para gestión de productos y carritos, proyecto final del curso de Backend de Coderhouse. Persistencia dual en MongoDB o FileSystem, vistas server-side y actualización en tiempo real por WebSockets.',
+      'API REST para gestión de productos y carritos. Persistencia dual en MongoDB o FileSystem, vistas server-side y actualización en tiempo real por WebSockets.',
     tags: ['Node.js', 'Express', 'MongoDB', 'WebSockets'],
     demo: null,
     code: 'https://github.com/Matiasdbruyn/Ecommerce',
