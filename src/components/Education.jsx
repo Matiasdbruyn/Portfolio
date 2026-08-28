@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import useReveal from '../hooks/useReveal.js'
 import Lightbox from './Lightbox.jsx'
+import certBackend from '../assets/certificados/full-stack-backend.jpg'
+import certReact from '../assets/certificados/full-stack-react.jpg'
+import certNutricionDeportiva from '../assets/certificados/nutricion-deportiva.jpg'
 
 const EDUCATION = [
   {
@@ -9,7 +12,6 @@ const EDUCATION = [
     dates: '2012 — 2018',
     state: 'Completado',
     category: 'ambos',
-    cert: null,
   },
   {
     title: 'Licenciatura en Nutrición',
@@ -17,7 +19,6 @@ const EDUCATION = [
     dates: '2019 — 2025',
     state: 'Graduado',
     category: 'ambos',
-    cert: null,
   },
   {
     title: 'Desarrollo Web',
@@ -25,7 +26,7 @@ const EDUCATION = [
     dates: '2022',
     state: 'Completado',
     category: 'dev',
-    cert: null,
+    certs: [],
   },
   {
     title: 'Desarrollo Web Full Stack',
@@ -34,6 +35,10 @@ const EDUCATION = [
     state: 'En curso',
     progress: true,
     category: 'dev',
+    certs: [
+      { src: certBackend, alt: 'Certificado de Programación Backend I — Desarrollo Web Full Stack' },
+      { src: certReact, alt: 'Certificado de React JS — Desarrollo Web Full Stack' },
+    ],
   },
   {
     title: 'Nutrición Deportiva',
@@ -41,7 +46,7 @@ const EDUCATION = [
     dates: '2026',
     state: 'Completado',
     category: 'nutricion',
-    cert: null,
+    certs: [{ src: certNutricionDeportiva, alt: 'Certificado de Nutrición Deportiva' }],
   },
   {
     title: 'Suplementación deportiva y ayudas ergogénicas',
@@ -49,14 +54,31 @@ const EDUCATION = [
     dates: '2026',
     state: 'Completado',
     category: 'nutricion',
-    cert: null,
+    certs: [],
   },
 ]
 
 export default function Education() {
   const headRef = useReveal()
   const gridRef = useReveal()
-  const [openCert, setOpenCert] = useState(null)
+  const [gallery, setGallery] = useState(null)
+
+  function openCerts(certs) {
+    if (!certs.length) return
+    setGallery({ images: certs, index: 0 })
+  }
+
+  function closeGallery() {
+    setGallery(null)
+  }
+
+  function prevCert() {
+    setGallery((g) => g && { ...g, index: (g.index - 1 + g.images.length) % g.images.length })
+  }
+
+  function nextCert() {
+    setGallery((g) => g && { ...g, index: (g.index + 1) % g.images.length })
+  }
 
   return (
     <section id="formacion">
@@ -75,13 +97,13 @@ export default function Education() {
               <p className="edu-org">{edu.org}</p>
               <div className="edu-bottom">
                 <span className="edu-date">{edu.dates}</span>
-                {'cert' in edu && (
+                {'certs' in edu && (
                   <button
                     className="cert-btn"
                     type="button"
-                    disabled={!edu.cert}
-                    title={edu.cert ? undefined : 'Certificado próximamente'}
-                    onClick={() => setOpenCert(edu)}
+                    disabled={edu.certs.length === 0}
+                    title={edu.certs.length === 0 ? 'Certificado próximamente' : undefined}
+                    onClick={() => openCerts(edu.certs)}
                   >
                     Certificado
                   </button>
@@ -92,8 +114,15 @@ export default function Education() {
         </div>
       </div>
 
-      {openCert && (
-        <Lightbox src={openCert.cert} alt={`Certificado de ${openCert.title}`} onClose={() => setOpenCert(null)} />
+      {gallery && (
+        <Lightbox
+          src={gallery.images[gallery.index].src}
+          alt={gallery.images[gallery.index].alt}
+          onClose={closeGallery}
+          onPrev={gallery.images.length > 1 ? prevCert : undefined}
+          onNext={gallery.images.length > 1 ? nextCert : undefined}
+          counter={gallery.images.length > 1 ? `${gallery.index + 1} / ${gallery.images.length}` : null}
+        />
       )}
     </section>
   )

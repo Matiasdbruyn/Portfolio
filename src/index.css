@@ -317,6 +317,25 @@ section:last-of-type{ border-bottom:none; }
 }
 .lightbox-close:hover{ color:var(--red); }
 .lightbox-close svg{ width:18px; height:18px; }
+.lightbox-nav{
+  position:fixed; top:50%; transform:translateY(-50%); width:48px; height:48px; border-radius:50%;
+  display:grid; place-items:center; background:var(--surface); border:1px solid var(--line);
+  color:var(--ink); cursor:pointer;
+}
+.lightbox-nav:hover{ color:var(--red); }
+.lightbox-nav svg{ width:20px; height:20px; }
+.lightbox-prev{ left:20px; }
+.lightbox-next{ right:20px; }
+.lightbox-counter{
+  position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
+  background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:7px 16px;
+  font-size:.82rem; font-weight:600; color:var(--ink-soft);
+}
+@media (max-width:600px){
+  .lightbox-nav{ width:40px; height:40px; }
+  .lightbox-prev{ left:10px; }
+  .lightbox-next{ right:10px; }
+}
 
 .skills-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:16px; }
 .skill-card{ border:1px solid var(--line); border-radius:16px; background:var(--surface); padding:22px 24px; }
