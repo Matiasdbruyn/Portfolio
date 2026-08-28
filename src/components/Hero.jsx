@@ -1,5 +1,6 @@
 import useRoleSwitcher from '../hooks/useRoleSwitcher.js'
 import photo from '../assets/yo.jpg'
+import { IconFile } from './Icons.jsx'
 
 export default function Hero() {
   const { text, fading } = useRoleSwitcher()
@@ -32,10 +33,18 @@ export default function Hero() {
         </div>
 
         <div className="hero-body">
-          <p className="lede">
-            Licenciado en Nutrición en transición hacia el desarrollo Full Stack. Combino una
-            formación clínica rigurosa con habilidades técnicas de programación para abordar cada
-            proyecto con una mirada integral, autodidacta y enfocada en la mejora continua.
+          <p className="lede cat-dev">
+            Desarrollador Full Stack con formación previa como Licenciado en Nutrición. Esa base
+            analítica y orientada a resultados se traduce hoy en un enfoque estructurado para
+            resolver problemas técnicos. Autodidacta, con capacidad de adaptación al trabajo en
+            equipo y compromiso con la mejora continua.
+          </p>
+          <p className="lede cat-nutricion">
+            Licenciado en Nutrición, con especializaciones en nutrición deportiva y
+            suplementación. Formación complementaria en desarrollo web Full Stack. Autodidacta,
+            con capacidad de adaptación al trabajo en equipo y compromiso con la mejora continua.
+            Mi trayectoria en distintos entornos laborales me aportó sólidas habilidades de
+            comunicación, organización y resolución de problemas.
           </p>
           <div className="cta-row">
             <a className="btn btn-primary" href="#experiencia">
@@ -43,6 +52,24 @@ export default function Hero() {
             </a>
             <a className="btn btn-ghost" href="#contacto">
               Contactar
+            </a>
+            <a
+              className="btn btn-ghost cat-dev"
+              href="/cv-matias-de-bruyn-dev.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconFile />
+              Ver CV
+            </a>
+            <a
+              className="btn btn-ghost cat-nutricion"
+              href="/cv-matias-de-bruyn-nutricion.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconFile />
+              Ver CV
             </a>
           </div>
         </div>
