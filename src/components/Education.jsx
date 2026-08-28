@@ -5,6 +5,9 @@ import certBackend from '../assets/certificados/full-stack-backend.jpg'
 import certReact from '../assets/certificados/full-stack-react.jpg'
 import certNutricionDeportiva from '../assets/certificados/nutricion-deportiva.jpg'
 import certDesarrolloWeb2022 from '../assets/certificados/desarrollo-web-2022.jpg'
+import certFullStackDesarrolloWeb from '../assets/certificados/full-stack-desarrollo-web.jpg'
+import certFullStackJavascript from '../assets/certificados/full-stack-javascript.jpg'
+import certSuplementacion from '../assets/certificados/suplementacion-deportiva.jpg'
 
 const EDUCATION = [
   {
@@ -37,8 +40,10 @@ const EDUCATION = [
     progress: true,
     category: 'dev',
     certs: [
-      { src: certBackend, alt: 'Certificado de Programación Backend I — Desarrollo Web Full Stack' },
+      { src: certFullStackDesarrolloWeb, alt: 'Certificado de Desarrollo Web — Desarrollo Web Full Stack' },
+      { src: certFullStackJavascript, alt: 'Certificado de Javascript — Desarrollo Web Full Stack' },
       { src: certReact, alt: 'Certificado de React JS — Desarrollo Web Full Stack' },
+      { src: certBackend, alt: 'Certificado de Programación Backend I — Desarrollo Web Full Stack' },
     ],
   },
   {
@@ -55,7 +60,7 @@ const EDUCATION = [
     dates: '2026',
     state: 'Completado',
     category: 'nutricion',
-    certs: [],
+    certs: [{ src: certSuplementacion, alt: 'Certificado de Suplementación deportiva y ayudas ergogénicas' }],
   },
 ]
 
