@@ -4,6 +4,7 @@ import Lightbox from './Lightbox.jsx'
 import certBackend from '../assets/certificados/full-stack-backend.jpg'
 import certReact from '../assets/certificados/full-stack-react.jpg'
 import certNutricionDeportiva from '../assets/certificados/nutricion-deportiva.jpg'
+import certDesarrolloWeb2022 from '../assets/certificados/desarrollo-web-2022.jpg'
 
 const EDUCATION = [
   {
@@ -26,7 +27,7 @@ const EDUCATION = [
     dates: '2022',
     state: 'Completado',
     category: 'dev',
-    certs: [],
+    certs: [{ src: certDesarrolloWeb2022, alt: 'Certificado de Desarrollo Web' }],
   },
   {
     title: 'Desarrollo Web Full Stack',
