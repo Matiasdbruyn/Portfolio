@@ -2,7 +2,7 @@
 
 Portfolio personal de **Matias Nicolas De Bruyn**, Licenciado en Nutrición en transición hacia el desarrollo web Full Stack. El sitio muestra ambos perfiles en un mismo lugar y deja elegir con qué mirada recorrerlo.
 
-🔗 **En vivo:** `https://matiasdbruyn.github.io/Portfolio/` (una vez publicado en GitHub Pages)
+🔗 **En vivo:** `https://matiasdbruyn.github.io/Portfolio/`
 
 ## Qué vas a encontrar
 
