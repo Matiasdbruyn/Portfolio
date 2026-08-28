@@ -41,7 +41,7 @@ export default function Contact() {
         <div className="section-head reveal" ref={headRef}>
           <p className="eyebrow">Contacto</p>
           <p>Disponible para nuevas oportunidades laborales.
-            <br /> Elegí el medio de contacto que prefieras.</p>
+            Elegí el medio de contacto que prefieras.</p>
         </div>
 
         <div className="contact-grid reveal" ref={gridRef}>
