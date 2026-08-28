@@ -60,7 +60,7 @@ export default function Hero() {
               rel="noopener noreferrer"
             >
               <IconFile />
-              Ver CV
+              Ver Currículum
             </a>
             <a
               className="btn btn-ghost cat-nutricion"
@@ -69,7 +69,7 @@ export default function Hero() {
               rel="noopener noreferrer"
             >
               <IconFile />
-              Ver CV
+              Ver Currículum
             </a>
           </div>
         </div>

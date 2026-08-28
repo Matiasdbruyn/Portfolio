@@ -158,8 +158,10 @@ nav.links a:hover::after{ transform:scaleX(1); }
 .btn{
   display:inline-flex; align-items:center; gap:.5em; font-family:var(--font-body); font-weight:600;
   font-size:.96rem; padding:13px 24px; border-radius:999px; text-decoration:none; border:1px solid transparent;
-  cursor:pointer; transition:transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
+  cursor:pointer; white-space:nowrap; flex:none;
+  transition:transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
 }
+.btn svg{ flex:none; width:16px; height:16px; }
 .btn:hover{ transform:translateY(-1px); }
 .btn-primary{ background:var(--green); color:#FBFBF6; }
 .btn-primary:hover{ background:var(--green-deep); }
