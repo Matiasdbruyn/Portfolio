@@ -69,7 +69,3 @@ src/
                      certificados una vez agregadas
 ```
 
-## Contenido pendiente
-
-- **Certificados**: cada tarjeta de Formación académica tiene un botón "Certificado" que hoy está deshabilitado. Para activarlo: guardá el archivo en `src/assets/certificados/` (nombres sugeridos: `tecnico-multimedios.jpg`, `licenciatura-nutricion.jpg`, `desarrollo-web.jpg`, `nutricion-deportiva.jpg`, `suplementacion-deportiva.jpg`), importalo en `src/components/Education.jsx`, y asignalo al campo `cert` del ítem correspondiente en `EDUCATION` (está en `null`). El botón se habilita solo y abre la imagen en un lightbox.
-- **Proyecto "Ecommerce"**: no tiene captura porque es una API backend sin interfaz visual.
