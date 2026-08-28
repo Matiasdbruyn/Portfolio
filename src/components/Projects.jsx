@@ -4,6 +4,7 @@ import diagnomedShot from '../assets/diagnomed.png'
 import suplexShot from '../assets/suplex.png'
 import registroShot from '../assets/registro-diario.png'
 import pachuxShot from '../assets/pachux.png'
+import ecommerce from "../assets/ecommerce.png"
 
 const PROJECTS = [
   {
@@ -28,7 +29,7 @@ const PROJECTS = [
   },
   {
     name: 'Ecommerce',
-    image: null,
+    image: ecommerce,
     alt: null,
     description:
       'API REST para gestión de productos y carritos. Persistencia dual en MongoDB o FileSystem, vistas server-side y actualización en tiempo real por WebSockets.',
