@@ -1,5 +1,6 @@
 import useReveal from '../hooks/useReveal.js'
 import { IconBrowser, IconExternal, IconCode } from './Icons.jsx'
+import sobrayaShot from '../assets/sobraya.jpg'
 import diagnomedShot from '../assets/diagnomed.png'
 import suplexShot from '../assets/suplex.png'
 import registroShot from '../assets/registro-diario.png'
@@ -7,6 +8,16 @@ import pachuxShot from '../assets/pachux.png'
 import ecommerce from "../assets/ecommerce.png"
 
 const PROJECTS = [
+  {
+    name: 'SobraYa',
+    image: sobrayaShot,
+    alt: 'Captura del sitio SobraYa',
+    description:
+      'Marketplace de excedentes de comida: los comercios publican lo que les sobró del día a mitad de precio y los usuarios lo reservan para retirar en una ventana horaria, con verificación por email y pagos vía Mercado Pago.',
+    tags: ['React', 'React Native', 'Node.js', 'MongoDB'],
+    demo: 'https://sobraya.netlify.app',
+    code: 'https://github.com/Matiasdbruyn/SobreYa',
+  },
   {
     name: 'Diagnomed',
     image: diagnomedShot,
