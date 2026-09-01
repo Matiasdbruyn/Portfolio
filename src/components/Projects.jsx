@@ -13,7 +13,7 @@ const PROJECTS = [
     image: sobrayaShot,
     alt: 'Captura del sitio SobraYa',
     description:
-      'Marketplace de excedentes de comida: los comercios publican lo que les sobró del día a mitad de precio y los usuarios lo reservan para retirar en una ventana horaria, con verificación por email y pagos vía Mercado Pago.',
+      'Marketplace de excedentes de comida: los comercios publican lo que les sobró del día a mitad de precio y los usuarios lo reservan para retirar en una ventana horaria.',
     tags: ['React', 'React Native', 'Node.js', 'MongoDB'],
     demo: 'https://sobraya.netlify.app',
     code: 'https://github.com/Matiasdbruyn/SobreYa',
