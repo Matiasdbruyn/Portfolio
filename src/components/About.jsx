@@ -18,10 +18,10 @@ export default function About() {
             Me adapto fácilmente al trabajo en equipo, soy autodidacta y estoy comprometido con la mejora continua. Mi paso por distintos entornos laborales me permitió desarrollar comunicación clara, organización y resolución de problemas bajo tiempos reales.
           </p>
           <div className="focus-pills">
-            <span className="pill">Desarrollo Frontend</span>
-            <span className="pill">Desarrollo Backend</span>
-            <span className="pill">Nutrición Clínica</span>
-            <span className="pill">Nutrición Deportiva</span>
+            <span className="pill cat-dev">Desarrollo Frontend</span>
+            <span className="pill cat-dev">Desarrollo Backend</span>
+            <span className="pill cat-nutricion">Nutrición Clínica</span>
+            <span className="pill cat-nutricion">Nutrición Deportiva</span>
           </div>
         </div>
       </div>

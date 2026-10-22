@@ -2,6 +2,8 @@ import { useState } from 'react'
 import useReveal from '../hooks/useReveal.js'
 import Lightbox from './Lightbox.jsx'
 import certBackend from '../assets/certificados/full-stack-backend.jpg'
+import certBackend2 from '../assets/certificados/full-stack-backend-2.jpg'
+import certCongresoSuplementacion from '../assets/certificados/congreso-suplementacion.jpg'
 import certReact from '../assets/certificados/full-stack-react.jpg'
 import certNutricionDeportiva from '../assets/certificados/nutricion-deportiva.jpg'
 import certDesarrolloWeb2022 from '../assets/certificados/desarrollo-web-2022.jpg'
@@ -44,6 +46,7 @@ const EDUCATION = [
       { src: certFullStackJavascript, alt: 'Certificado de Javascript — Desarrollo Web Full Stack' },
       { src: certReact, alt: 'Certificado de React JS — Desarrollo Web Full Stack' },
       { src: certBackend, alt: 'Certificado de Programación Backend I — Desarrollo Web Full Stack' },
+      { src: certBackend2, alt: 'Certificado de Programación Backend II — Desarrollo Web Full Stack' },
     ],
   },
   {
@@ -61,6 +64,14 @@ const EDUCATION = [
     state: 'Completado',
     category: 'nutricion',
     certs: [{ src: certSuplementacion, alt: 'Certificado de Suplementación deportiva y ayudas ergogénicas' }],
+  },
+  {
+    title: 'Primer Congreso Argentino Científico de Suplementación',
+    org: 'UADE · CACIS',
+    dates: '2026',
+    state: 'Participación',
+    category: 'nutricion',
+    certs: [{ src: certCongresoSuplementacion, alt: 'Certificado de participación en el Primer Congreso Argentino Científico de Suplementación' }],
   },
 ]
 

@@ -5,9 +5,15 @@ import { IconFile } from './Icons.jsx'
 const CV_DEV = `${import.meta.env.BASE_URL}cv-matias-de-bruyn-dev.pdf`
 const CV_NUTRICION = `${import.meta.env.BASE_URL}cv-matias-de-bruyn-nutricion.pdf`
 
-export default function Hero() {
-  const { text, fading } = useRoleSwitcher()
+const ROLES_DEV = ['Desarrollador Web Full Stack', 'Desarrollo Frontend', 'Desarrollo Backend', 'Maquetador CMS']
+const ROLES_NUTRICION = ['Licenciado en Nutrición', 'Nutrición Clínica', 'Nutrición Deportiva']
 
+function RoleLine({ roles, profile }) {
+  const { text, fading } = useRoleSwitcher(roles)
+  return <p className={`role-line cat-${profile}${fading ? ' fading' : ''}`}>{text}</p>
+}
+
+export default function Hero() {
   return (
     <section id="inicio" className="hero">
       <div className="container hero-grid">
@@ -16,7 +22,8 @@ export default function Hero() {
           <h1>
             Matias <em>De&nbsp;Bruyn</em>
           </h1>
-          <p className={`role-line${fading ? ' fading' : ''}`}>{text}</p>
+          <RoleLine roles={ROLES_DEV} profile="dev" />
+          <RoleLine roles={ROLES_NUTRICION} profile="nutricion" />
         </div>
 
         <div className="hero-mark">
