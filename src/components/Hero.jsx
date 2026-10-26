@@ -24,6 +24,7 @@ export default function Hero() {
           </h1>
           <RoleLine roles={ROLES_DEV} profile="dev" />
           <RoleLine roles={ROLES_NUTRICION} profile="nutricion" />
+          <p className="license cat-nutricion">Matrícula Nacional: 14442</p>
         </div>
 
         <div className="hero-mark">

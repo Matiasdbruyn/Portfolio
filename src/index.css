@@ -3,8 +3,8 @@
   --surface:#F8F6F1;
   --surface-2:#F0EDE4;
   --ink:#262420;
-  --ink-soft:#655F53;
-  --ink-faint:#96907F;
+  --ink-soft:#262420;
+  --ink-faint:#262420;
   --line:#EAE6DA;
   --line-strong:#DCD6C6;
   --green:#3E7C59;
@@ -192,6 +192,7 @@ nav.links a:hover::after{ transform:scaleX(1); }
   transition:opacity .3s ease;
 }
 .role-line.fading{ opacity:0; }
+.hero .license{ margin-top:18px; font-size:1.1rem; font-weight:700; letter-spacing:.01em; color:var(--ink); }
 .hero p.lede{ margin-top:18px; max-width:56ch; color:var(--ink-soft); font-size:1.06rem; }
 .hero .cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; }
 
@@ -238,7 +239,10 @@ section:last-of-type{ border-bottom:none; }
   border:1px solid var(--line-strong); color:var(--ink-soft); background:var(--surface);
 }
 
-.proj-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; }
+.proj-group + .proj-group{ margin-top:clamp(44px,6vw,72px); }
+.proj-group-head{ margin-bottom:22px; }
+.proj-group-head h3{ font-size:clamp(1.25rem,1.8vw,1.5rem); }
+.proj-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:20px; }
 .proj-card{
   background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden;
   display:flex; flex-direction:column; transition:box-shadow .2s ease, transform .2s ease;
@@ -252,7 +256,7 @@ section:last-of-type{ border-bottom:none; }
 .proj-image-slot span{ font-size:.78rem; font-weight:500; }
 .proj-card img{ display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border-bottom:1px solid var(--line); }
 .proj-body{ padding:18px 20px 20px; display:flex; flex-direction:column; gap:10px; flex:1; }
-.proj-body h3{ font-size:1.1rem; font-weight:600; }
+.proj-body h4{ font-size:1.1rem; font-weight:600; }
 .proj-desc{ font-size:.93rem; color:var(--ink-soft); }
 .proj-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:6px; }
 .proj-tags span{ font-size:.78rem; font-weight:500; padding:5px 11px; border-radius:999px; background:var(--surface-2); color:var(--ink-soft); }
