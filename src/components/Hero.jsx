@@ -18,7 +18,7 @@ export default function Hero() {
     <section id="inicio" className="hero">
       <div className="container hero-grid">
         <div className="hero-heading">
-          <p className="eyebrow">Portfolio · Buenos Aires, Argentina</p>
+          <p className="eyebrow">Buenos Aires, Argentina</p>
           <h1>
             Matias <em>De&nbsp;Bruyn</em>
           </h1>
